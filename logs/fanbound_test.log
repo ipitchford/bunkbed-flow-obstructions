@@ -1,0 +1,86 @@
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 1  |error|=5.704e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 2  |error|=4.165e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 3  |error|=2.450e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 4  |error|=6.156e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 5  |error|=1.214e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 6  |error|=2.911e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 7  |error|=4.381e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 8  |error|=5.563e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L= 9  |error|=6.439e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=10  |error|=7.017e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=11  |error|=7.327e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=12  |error|=7.408e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=13  |error|=7.306e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=14  |error|=7.062e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=15  |error|=6.717e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=16  |error|=6.304e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=17  |error|=5.851e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=18  |error|=5.380e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=19  |error|=4.909e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=20  |error|=4.449e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=21  |error|=4.010e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=22  |error|=3.597e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=23  |error|=3.213e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=3/2 x=1 L=24  |error|=2.860e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 1  |error|=1.035e+01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 2  |error|=7.349e+00  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 3  |error|=5.192e+00  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 4  |error|=3.608e+00  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 5  |error|=2.469e+00  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 6  |error|=1.670e+00  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 7  |error|=1.122e+00  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 8  |error|=7.524e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L= 9  |error|=5.057e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=10  |error|=3.418e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=11  |error|=2.331e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=12  |error|=1.607e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=13  |error|=1.121e-01  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=14  |error|=7.923e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=15  |error|=5.672e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=16  |error|=4.110e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=17  |error|=3.012e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=18  |error|=2.229e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=19  |error|=1.665e-02  bound=eps>1  holds=True
+word [0, 1, 2, 0, 1, 2] q=21/10 x=1 L=20  |error|=1.252e-02  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 1  |error|=2.923e+01  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 2  |error|=2.294e+01  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 3  |error|=1.809e+01  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 4  |error|=1.433e+01  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 5  |error|=1.139e+01  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 6  |error|=9.071e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 7  |error|=7.244e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 8  |error|=5.796e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L= 9  |error|=4.644e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=10  |error|=3.726e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=11  |error|=2.993e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=12  |error|=2.406e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=13  |error|=1.935e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=14  |error|=1.557e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=15  |error|=1.254e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=16  |error|=1.010e+00  bound=eps>1  holds=True
+word [0, 1] q=5/2 x=1/2 L=17  |error|=8.139e-01  bound=2.261e+02  holds=True
+word [0, 1] q=5/2 x=1/2 L=18  |error|=6.559e-01  bound=1.818e+02  holds=True
+word [0, 1] q=5/2 x=1/2 L=19  |error|=5.287e-01  bound=1.463e+02  holds=True
+word [0, 1] q=5/2 x=1/2 L=20  |error|=4.262e-01  bound=1.179e+02  holds=True
+word [0, 1] q=5/2 x=1/2 L=21  |error|=3.437e-01  bound=9.511e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=22  |error|=2.771e-01  bound=7.676e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=23  |error|=2.235e-01  bound=6.199e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=24  |error|=1.802e-01  bound=5.008e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=25  |error|=1.454e-01  bound=4.047e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=26  |error|=1.172e-01  bound=3.272e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=27  |error|=9.457e-02  bound=2.646e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=28  |error|=7.628e-02  bound=2.140e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=29  |error|=6.153e-02  bound=1.731e+01  holds=True
+word [0, 1] q=5/2 x=1/2 L=30  |error|=4.963e-02  bound=1.401e+01  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 1  |error|=5.375e+02  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 2  |error|=2.930e+02  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 3  |error|=1.747e+02  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 4  |error|=1.091e+02  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 5  |error|=6.987e+01  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 6  |error|=4.542e+01  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 7  |error|=2.980e+01  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 8  |error|=1.966e+01  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L= 9  |error|=1.302e+01  bound=eps>1  holds=True
+word [0, 1, 0, 2] q=3 x=2 L=10  |error|=8.638e+00  bound=3.618e+04  holds=True
+word [0, 1, 0, 2] q=3 x=2 L=11  |error|=5.742e+00  bound=2.417e+04  holds=True
+word [0, 1, 0, 2] q=3 x=2 L=12  |error|=3.820e+00  bound=1.615e+04  holds=True

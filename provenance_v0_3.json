@@ -1,0 +1,21 @@
+{
+  "schema": "evidence-press-provenance-v03",
+  "date": "2026-09-30",
+  "input_sha256": {
+    "history/supplied_v0_2.zip": "4012b14d27d871bdce242536650ed4d58de380729fab1c02628ab85aa49fd8db",
+    "history/supplied_referee_checks.zip": "db9fc01b2e0f9dcb222cffd24875c5d126c74df043dd7158b263cb8f172b0c14",
+    "history/supplied_referee_report.txt": "28efa9275267e3575326b22832af66d2df40b8cc6ca95883253884fac5e1d3e9"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "sympy": "1.14.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "compiler": "c++ (Debian 14.2.0-19) 14.2.0"
+  },
+  "lineage": "User-supplied v0.2 archive; v0.1 reviewer report and code; new v0.3 symbolic derivations and verifier repairs in this session.",
+  "independence": "Different algorithms were executed and cross-checked. No claim of an independent human team, external peer review, or a separate formal-verification system.",
+  "development_error_caught": "An exploratory attempt to combine all three two-block equality partitions was rejected after an exact cross-check. The released symbolic derivation evaluates all five ordered partitions individually.",
+  "bibliographic_correction": "ALR arXiv submission date is 23 September 2025.",
+  "publication_status": "Candidate files only; not uploaded to Evidence Press website.",
+  "pdf_qa": "LaTeX compiled repeatedly; all page thumbnails and selected full-size pages inspected; no unresolved references or overfull boxes after correction."
+}

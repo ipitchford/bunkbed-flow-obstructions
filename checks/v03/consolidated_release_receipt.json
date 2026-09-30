@@ -1,0 +1,39 @@
+{
+  "schema": "evidence-press-v03-executed-coverage",
+  "status": "PASS",
+  "baseline_full_reconstruction": {
+    "mode": "python -O",
+    "status": "PASS",
+    "receipt": "checks/v03/baseline_optimised.json"
+  },
+  "developed_full_reconstruction": {
+    "mode": "python -O code/certify_v02.py --full",
+    "status": "PASS",
+    "elapsed_seconds": 601.2,
+    "receipt": "checks/v03/developed_full_optimised.json"
+  },
+  "integrated_entrypoint_runs": [
+    {
+      "mode": "-O --quick",
+      "status": "PASS",
+      "seconds": 80.095,
+      "receipt": "checks/v03/integrated_quick_opt1/receipt.json"
+    },
+    {
+      "mode": "-OO --quick",
+      "status": "PASS",
+      "seconds": 79.959,
+      "receipt": "checks/v03/integrated_quick_opt2/receipt.json"
+    }
+  ],
+  "coverage_explanation": "Full baseline and developed reconstructions were executed as constituent commands. The integrated runner was exercised end-to-end in both quick modes. New symbolic, graph, interface, presentation and negative stages ran in the integrated executions. No quick run is labelled full reconstruction.",
+  "negative_test_count": 10,
+  "current_latex_check_count": 42,
+  "interface_partition_pairs": 44168,
+  "polynomial_sanity": "P(1,h)=(1+h)^10 exactly; this is not used to continue a limiting inequality across q=1.",
+  "remaining_python_assert_statements": 0,
+  "source_manifest_sha256": "1aa11f4d2c06098c74c6fda10aa41278dc3d9de186f58c3d630bcf2bf4316f2e",
+  "external_human_review": false,
+  "proof_assistant_formalisation": false,
+  "global_parameter_classification_complete": false
+}

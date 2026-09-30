@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "pdf_pages": 19,
+  "pdf_sha256": "3be50e5e778f855acadcc39d6198c773279d245f87a2ec9a7bbb02fda3b3f43f",
+  "rendering": "All-page contact sheet inspected; first page, q=1 proof, coefficient/positivity table, interface appendix and final pages inspected at larger scale. Fraction row spacing corrected.",
+  "latex": "Final two runs have no unresolved references or overfull boxes.",
+  "text_margin_check": "All text block bounds within safe horizontal margins; no nearly empty pages."
+}

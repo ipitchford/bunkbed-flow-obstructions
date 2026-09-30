@@ -1,0 +1,27 @@
+{
+  "title": "Flow-polynomial obstructions to the random-cluster bunkbed inequality",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p>Unrefereed candidate: an Eulerian-flow transfer and exact local window U_p intersect [alpha,691/250] = {2}, for every fixed 0&lt;p&lt;1. Full homogeneous finite simple bunkbed counterexamples exist at the other weights in this window. The graph may depend on both parameters. Alpha is not a record lower endpoint. Global classification and integer q&gt;=3 remain unresolved.</p><p>Producer-side exact reconstruction and negative controls; no formal verification or external human peer review established. Original prose/data CC0-1.0, original code MIT; third-party material retains its terms.</p>",
+  "creators": [
+    {
+      "name": "Anonymous"
+    }
+  ],
+  "version": "0.3.1-candidate",
+  "publication_date": "2026-09-30",
+  "access_right": "open",
+  "license": "cc-zero",
+  "keywords": [
+    "bunkbed conjecture",
+    "random-cluster model",
+    "flow polynomial"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/bunkbed-flow-obstructions",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

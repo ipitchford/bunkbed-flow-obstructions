@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "interface_vertices": 1,
+      "partition_pairs": 1
+    },
+    {
+      "interface_vertices": 2,
+      "partition_pairs": 4
+    },
+    {
+      "interface_vertices": 3,
+      "partition_pairs": 25
+    },
+    {
+      "interface_vertices": 4,
+      "partition_pairs": 225
+    },
+    {
+      "interface_vertices": 5,
+      "partition_pairs": 2704
+    },
+    {
+      "interface_vertices": 6,
+      "partition_pairs": 41209
+    }
+  ],
+  "total_pairs": 44168,
+  "scope": "Finite component identity checks; density bound is proved in the paper."
+}

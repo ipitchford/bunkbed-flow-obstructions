@@ -1,0 +1,36 @@
+{
+  "schema": "evidence-press-research-stop-v03",
+  "status": "candidate_release_local_classification",
+  "global_problem": "ALR Problem 1.4; all finite simple full homogeneous bunkbed graphs",
+  "completed": {
+    "local_classification": "U_p intersection [alpha,691/250] = {2} for every 0<p<1",
+    "alpha_polynomial_ascending": [
+      -10,
+      26,
+      -28,
+      19,
+      -7,
+      1
+    ],
+    "alpha_unique_real_root": true,
+    "alpha_bracket": [
+      "787422865474633/1000000000000000",
+      "787422865474634/1000000000000000"
+    ],
+    "endpoint_p_0_and_1": "inequality holds directly for all q>0"
+  },
+  "not_completed": [
+    "Full parameter classification below alpha",
+    "Full parameter classification above 691/250",
+    "Integer q>=3",
+    "Proof-assistant formalisation",
+    "External human review",
+    "Exhaustive priority clearance"
+  ],
+  "mechanism_limits": [
+    "The q>1 negative-flow sufficient condition cannot be negative at integer q>=2 on Eulerian graphs.",
+    "Below alpha, the doubled-triangle limiting test is positive at sufficiently small p; this is not universal validity.",
+    "2.764 is a certified rational endpoint, not a proved optimum."
+  ],
+  "why_stop": "The general proofs and certificates for this strengthened local classification are complete as a candidate. Further parameter extensions need additional witnesses or mechanisms; unsuccessful sampled searches are not theorems."
+}

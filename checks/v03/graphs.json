@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "small_graphs": [
+    {
+      "name": "9_10",
+      "base_vertices": 3427,
+      "base_edges": 3555,
+      "full_vertices": 6854,
+      "full_edges": 10537,
+      "sha256": "24d73b40da1f88b511436d5e153393c65a336a06c73ae4120c3a04eb6e0da593"
+    },
+    {
+      "name": "3_2",
+      "base_vertices": 10927,
+      "base_edges": 11163,
+      "full_vertices": 21854,
+      "full_edges": 33253,
+      "sha256": "a969677214900808dc9b4af50bb592952cd49711b9acdb17f2db55f6be55f9e2"
+    }
+  ],
+  "large_recipe_checked": {
+    "name": "21_10",
+    "q": "21/10",
+    "p": "1/2",
+    "word": [
+      0,
+      3,
+      8,
+      1,
+      5,
+      6,
+      2,
+      10,
+      5,
+      4,
+      9,
+      3,
+      6,
+      11,
+      9,
+      1,
+      10,
+      7,
+      4,
+      0,
+      7,
+      8,
+      2,
+      11
+    ],
+    "L": 1000,
+    "k": 1515626,
+    "posts": 12,
+    "core_vertices": 24013,
+    "core_edges": 48024,
+    "base_vertices": 18211525,
+    "base_edges": 18235536,
+    "full_vertices": 36423050,
+    "full_edges": 54682597,
+    "base_u": 12,
+    "base_v": 24012,
+    "full_source": 24,
+    "full_same_target": 48024,
+    "full_cross_target": 48025,
+    "full_vertex_convention": "(a,layer) -> 2*a+layer"
+  },
+  "large_graph_materialised": false
+}

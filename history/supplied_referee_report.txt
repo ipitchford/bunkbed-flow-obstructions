@@ -1,0 +1,433 @@
+# Review: *Flow-polynomial obstructions to the random-cluster bunkbed inequality*
+
+**Evidence Press candidate v0.1.0 — 30 September 2026**
+
+**Editorial recommendation: Minor revisions.**  
+**Prospective REF rating: 4★, with moderate confidence.**
+
+The main mathematical claims survived my review and additional exact checks. I found a reproducible defect in the verification software’s behaviour under Python optimisation, but **not a counterexample to the mathematics or a failure of the default verification run**.
+
+:chatgpt-content-reference{index="18"}[Download the referee-check bundle](sandbox:/mnt/data/bunkbed_referee_checks_2026-09-30.zip)
+
+## 1. Executive assessment
+
+This is a substantial mathematical contribution, rather than a computational extension of an existing example. Its central result converts a negative evaluation of an Eulerian flow polynomial into a counterexample to the random-cluster bunkbed inequality on a **finite, connected, simple, full bunkbed graph at every prescribed interior edge probability**. The consequences include failure throughout \(1<q<2\), identification of \(2\) as the least universally valid \(q>1\), and failure on an interval above \(2\).
+
+The strongest feature is the complete chain from an exact algebraic identity, through a justified real-\(q\) limit, to an ordinary homogeneous graph. The paper does not stop at a hypergraph obstruction or mistake an integer-colour calculation for a noninteger-\(q\) proof.
+
+All supplied checks and manifest hashes passed. Additional reviewer-written enumeration confirmed the crucial post-cancellation mechanism and agreed with the supplied core calculations. I found no fatal mathematical defect.
+
+The necessary revisions are bounded: sharpen attribution to the precise prior questions being answered, expand the most compressed real-\(q\) argument, and harden the verifier against optimisation-mode failures. My prospective **4★ assessment** rests on the general transfer theorem and its qualitative consequences—not graph size, computational volume, or the candidate’s publication status. Confidence is higher in the checked finite results than in the necessarily less certain judgement of originality and eventual field significance.
+
+## 2. Scope and evidence limits
+
+I reviewed the 12-page manuscript and its LaTeX source, the mathematical and assurance ledgers, the verification programs, stored certificates, graph recipes, supplied smaller edge list, and provenance material. I also checked relevant primary literature and official REF guidance.
+
+The computational review comprised two distinct activities:
+
+**Reproduction:** I reran the supplied verification suite and checked all 23 files covered by its SHA-256 manifest.
+
+**Additional examination:** I wrote a separate exhaustive signed-count enumerator, tested the post-cancellation identity coefficient by coefficient, checked new rational-parameter cases, independently reconstructed the pendant gadget’s polynomial signature, and ran deliberately corrupted-input tests.
+
+These distinctions matter. Running two supplied algorithms is not the same as independently implementing the entire proof. The extra enumeration independently checks selected finite identities; it does not replace the written general argument.
+
+The large \(q=21/10\) construction was assessed through its recipe, analytic reduction, and rational error certificate. I did **not** enumerate its full edge-configuration space or materialise its approximately 36-million-vertex full bunkbed.
+
+The review is neither proof-assistant verification nor an external human referee report. The literature search was targeted, not an exhaustive priority certification. Häggström’s original proceedings PDF could not be retrieved; I checked the manuscript’s included Ising argument and the explicit statement of his result in Ayyer–Linusson–Ravichandran, Theorem 1.5. :chatgpt-content-reference{index="0"}
+
+## 3. Contribution and positioning
+
+### The strongest defensible thesis
+
+The paper’s main contribution is:
+
+\[
+\boxed{
+F_\Gamma(q)<0,\quad
+\Gamma\text{ connected, loopless and Eulerian},\quad q>1
+\ \Longrightarrow\
+\text{a full homogeneous bunkbed counterexample for every }p\in(0,1).
+}
+\]
+
+The graph may depend on \(p\) and \(q\). This quantifier order is essential and is correctly stated.
+
+The argument has three substantive components:
+
+1. An exact identification of the signed hypergraph-chain numerator with a flow polynomial.
+2. A homogeneous fan construction whose normalised signed numerator converges to that expression for **real**, not merely integer, \(q>1\).
+3. An exact amplification mechanism that removes the artificial conditioning on designated posts.
+
+The resulting parameter statements are consequential because they concern **all finite graphs**, not a restricted graph family or a single numerical example.
+
+### The paper currently understates its most direct connection to prior work
+
+Gladkov, Pak and Zimin explicitly ask in §8.5 for the smallest \(q>1\) giving universal validity and discuss the unresolved possibility of validity for every \(q\ge2\). The candidate answers the first question and rules out the second possibility. This deserves a precise citation in the introduction. :chatgpt-content-reference{index="1"}
+
+Their author version also records Sokal’s suggestion of validity at integers \(q\ge2\) and failure at nonintegers \(q>2\). The candidate establishes part of the latter prediction, not the whole suggestion. :chatgpt-content-reference{index="2"}
+
+This positioning strengthens the significance case. The paper is not merely reporting an interesting sign change: it changes the known qualitative structure of the parameter problem.
+
+### What is not new
+
+The manuscript correctly credits the doubled-triangle cubic
+
+\[
+q^3-5q^2+10q-7
+\]
+
+and its root near \(1.430159709\) to existing flow-polynomial work. Dong’s Theorem 4.3 and equation (4.7) explicitly contain the relevant polynomial. :chatgpt-content-reference{index="3"}
+
+Likewise, post-cloning and cancellation mechanisms have antecedents in the earlier bunkbed constructions. The new contribution should be described as their **exact random-cluster implementation within a general flow-polynomial transfer**, not the invention of every underlying gadget idea. :chatgpt-content-reference{index="4"}
+
+## 4. Major comments
+
+These are the principal revision requests. **None is an identified disproof of a main theorem.**
+
+### 4.1 State exactly which prior questions are answered
+
+**Issue.** The introduction frames the work primarily as a partial answer to ALR Problem 1.4. That is accurate, but it misses a particularly direct statement of the paper’s significance.
+
+**Manuscript evidence.** Section 1 cites GPZ as construction background, while Corollary 1.2 identifies the least universal \(q>1\) and disproves upward closure.
+
+**Why it matters.** A reader should not have to discover independently that these conclusions answer an explicitly stated prior question and eliminate a previously contemplated parameter regime. Conversely, the relation to Sokal’s broader suggestion needs a clear boundary.
+
+**Required revision.** Add a short paragraph citing GPZ §8.5 and its author-version footnote. Explain that the manuscript settles the least-\(q\) question, disproves universal validity throughout \(q\ge2\), and proves only a restricted noninteger interval above \(2\). Preserve the existing disclaimer concerning integer \(q\ge3\).
+
+### 4.2 Make the real-\(q\) continuation easier to audit
+
+**Issue.** Section 3 contains the most important technical safeguard in the paper, but several of its algebraic steps are compressed.
+
+**Manuscript evidence.** The finite post-colour partition formula, reduced representations, compound-matrix contraction, and omitted-colour contribution are introduced in relatively rapid succession.
+
+**Why it matters.** An invalid inference from integer-colour identities to a noninteger limiting statement would destroy the central theorem. The manuscript appears to avoid that inference correctly: it first establishes a finite-\(L\) identity and then analyses its finitely many algebraic terms. This should be unmistakable.
+
+**Required revision.** Isolate a short lemma explaining:
+
+- why the partition formula is valid for every fixed finite \(L\);
+- why negative values of \(q-r\) and falling factorials are algebraic weights, not probability assignments;
+- how the compound-matrix contraction is obtained;
+- why the omitted-colour term vanishes after normalisation.
+
+I regard this as an **expository strengthening of an argument already present**, not a demand for a missing theorem. The additional finite checks described below support the formula, including cases with negative reduced weights.
+
+### 4.3 Make certificate verification fail reliably
+
+**Issue.** Important validation steps use Python `assert`, and one assertion contains a file-reading side effect.
+
+**Manuscript evidence.** In `verify_flow.py`, comparison with the expected polynomial and several other checks are assertions. In `run_all.py`, reading the edge-list header occurs inside an assertion.
+
+**Decisive test.** In a temporary copy, I increased the expected flow polynomial’s constant coefficient by \(1\):
+
+| Invocation or check | Observed outcome |
+|---|---|
+| Normal `verify_flow.py` | Rejected the mismatch |
+| `python -O verify_flow.py` | Returned `"status": "PASS"` |
+| Separate manifest check | Detected the modification |
+| Unmodified full `run_all.py` under `-O` | Crashed with `IndexError` |
+
+The full runner’s crash occurs because optimisation removes the assertion containing the header read; the header is subsequently treated as an edge.
+
+**Why it matters.** A proof-checking program should not silently disable a claimed validation under a standard execution option. However, this does **not** show that the actual flow polynomial is wrong, and it does not invalidate the successful default run.
+
+**Required revision.** Replace proof-critical assertions with explicit checks raising exceptions, or explicitly reject optimised execution. Move every side-effecting read outside assertions. Add the corrupted-coefficient test as a regression test.
+
+This is a small software repair, not a new research task.
+
+## 5. Rigour, results and inference
+
+### 5.1 The word identity is convincing
+
+Theorem 2.1 asserts
+
+\[
+\mathcal N_w(q;\lambda)
+=
+q^{t+2}\left(\prod_i\lambda_i\right)
+\frac{F_{\Gamma_w}(q)}{q-1}.
+\]
+
+The proof’s structure is sound. Conditional on post colours, the transfer matrices have rank-one second exterior powers. Their products generate the factors
+
+\[
+q\delta_{s_a,s_b}-1,
+\]
+
+whose sum over post assignments yields the stated flow-polynomial expansion.
+
+I checked the potentially delicate expression
+
+\[
+z\,\operatorname{tr}K-\mathbf1^\top K^2\mathbf1.
+\]
+
+The use of \(K^2\), rather than an assumed symmetric-matrix expression, is consistent with pairing the initial and final marginals across the two layers. I found no orientation error.
+
+The polynomial continuation is also legitimate: multiplication by \(q-1\) produces an identity between polynomials that agrees at infinitely many integer values.
+
+The ten supplied finite-word checks are useful corroboration. They are not being used as a substitute for the general proof.
+
+### 5.2 The fan limit handles the main analytic risk
+
+For the fan transfer matrix, the relevant eigenvalues satisfy
+
+\[
+0<x<\lambda_-<\lambda_+.
+\]
+
+The strict inequality \(x/\lambda_-<1\) is the mechanism suppressing unwanted modes after the prescribed normalisation.
+
+The important feature is that the paper does **not** argue that an integer-\(q\) asymptotic formula automatically continues to all real \(q\). It writes a finite partition-indexed expression and analyses that expression at fixed real \(q>1\).
+
+I found the reduced projector decomposition, the leading compound-matrix term, and the normalisation mutually consistent. Appendix A also supplies a finite error estimate rather than leaving the explicit large example dependent on an unspecified “sufficiently large” fan length.
+
+This is the strongest technical part of the manuscript.
+
+### 5.3 Post amplification is valid in the setting stated
+
+The amplification lemma requires that deleting the designated posts leaves a single path containing all other vertices.
+
+That hypothesis makes the cancellation work. Once designated posts are wired, an additional open vertical edge allows a layer swap on the appropriate path suffix. This preserves the random-cluster weight and exchanges the target events.
+
+The manuscript then integrates pendant vertices exactly. One pendant produces a three-edge path between the two copies of a post, with effective activity
+
+\[
+r=\frac{x^3}{q^2+3qx+3x^2}.
+\]
+
+Including the original post edge and \(k\) such paths gives
+
+\[
+y_k=(1+x)(1+r)^k-1,
+\]
+
+which tends to infinity. The signed numerator’s negative leading coefficient therefore eventually dominates.
+
+I independently enumerated the three-edge gadget and recovered the two boundary signatures
+
+\[
+q^2+3qx+3x^2
+\qquad\text{and}\qquad
+x^3.
+\]
+
+No independence assumption inappropriate to the random-cluster model is needed.
+
+### 5.4 The whole interval \(1<q<2\) is proved, not sampled
+
+For the evenly thickened triangle, writing \(z=q-1\), the manuscript obtains
+
+\[
+\frac{F_{\ell C_3}(q)}{q-1}
+=
+\frac{z^{3\ell-1}+3z^\ell+z-1}{q^2},
+\]
+
+for the even thickening used in the construction.
+
+When \(0<z<1\), sufficiently large even \(\ell\) makes this negative. The supplied sufficient inequality is conservative but adequate.
+
+Combining this family with the transfer theorem gives the entire interval below \(2\). Adding the credited positive Ising result gives the claimed minimum. This is not an extrapolation from finitely many rational \(q\)-values.
+
+### 5.5 The above-\(2\) witness is properly certified
+
+The auxiliary witness has 12 vertices, 24 edges, and degree \(4\) at every vertex. Those structural requirements matter because the transfer theorem requires an Eulerian graph.
+
+The two polynomial reconstructions agreed, using:
+
+\[
+2^{24}=16{,}777{,}216
+\]
+
+edge subsets and
+
+\[
+B_{12}=4{,}213{,}597
+\]
+
+vertex partitions.
+
+The resulting polynomial satisfies
+
+\[
+F_\Gamma(21/10)
+=
+-\frac{20868388946779}{10^{13}},
+\]
+
+and
+
+\[
+F_\Gamma(9/4)
+=
+-\frac{57285175}{67108864}.
+\]
+
+More importantly, all 13 Bernstein coefficients of \(F_\Gamma(q)/(q-1)\) on the claimed interval are strictly negative. The interval result therefore does not depend on sampling or approximate root locations.
+
+The paper correctly distinguishes the **12-vertex auxiliary flow witness** from the much larger ordinary bunkbed counterexamples.
+
+### 5.6 The finite constructions have different evidence types
+
+At \(p=1/2\), the certified sizes are:
+
+| Parameter | Base graph: vertices / edges | Full bunkbed: vertices / edges |
+|---|---:|---:|
+| \(q=3/2\) | 28,354 / 28,602 | 56,708 / 85,558 |
+| \(q=21/10\) | 18,211,525 / 18,235,536 | 36,423,050 / 54,682,597 |
+
+For \(q=3/2\), the conditioned core numerator was computed exactly by two different supplied algorithms, and the smaller base edge list matched its recipe and was checked to be connected and simple.
+
+For \(q=21/10\), the certificate verifies an analytic sufficient bound. The normalised limit is less than \(-60000\), while the certified error is below \(10^{-36}\). The subsequent amplification parameters satisfy the stated inequalities.
+
+The second result is **not a direct computation of the large graph’s partition function**. The manuscript explains this correctly. Its enormous size is not a mathematical weakness, although it means the contribution should not be advertised as a practically small counterexample.
+
+### 5.7 Additional referee tests passed
+
+The new checks went beyond replaying stored receipts:
+
+| Additional test | Result |
+|---|---|
+| Contracted two-post example: 32,768 configurations | Every positive-extra-vertical contribution cancelled coefficientwise |
+| Contracted three-post example: 4,194,304 configurations | Same coefficientwise cancellation |
+| Full bunkbed of a five-vertex base: 131,072 configurations | Leading post-activity coefficient matched the conditioned-core polynomial |
+| Independent enumeration versus supplied frontier and Potts algorithms | Exact agreement on 14 rational-parameter cases |
+| Further frontier-versus-Potts tests | Exact agreement on 24 additional cases |
+| Independent pendant-gadget integration | Recovered the stated effective activity |
+
+These checks specifically target post cancellation and the finite real-\(q\) representation. They increase confidence without purporting to prove the general theorem computationally.
+
+### 5.8 The criticism of ALR Lemma A.1 is correct and appropriately limited
+
+The inspected lemma uses the number of common edges to bound a marginal distortion. With no common edges, its printed statement would force equality of the relevant marginal measures. :chatgpt-content-reference{index="5"}
+
+The manuscript’s example gives
+
+\[
+\Pr_G(ab\text{ open})=\frac13,
+\qquad
+\Pr_{G\cup H}(ab\text{ open})=\frac5{14}.
+\]
+
+The exact check reproduced these values. The literal lemma is therefore false.
+
+The manuscript properly stops short of claiming that ALR’s theorem is false. Its own proof avoids the problematic bound. That restraint should be preserved.
+
+## 6. External literature check
+
+**Search date:** 30 September 2026.
+
+I used web search and Exa discovery, followed by primary arXiv text, an author-hosted manuscript, and official REF documents. Search concepts included “random-cluster bunkbed smallest \(q\)”, “bunkbed counterexamples \(q>2\)”, “Eulerian flow polynomial negative values”, and possible developments following arXiv:2509.18788.
+
+I prioritised work bearing on the same model, quantifiers, and transfer mechanism. Results about directed bunkbeds, forests, or infinite-volume phase transitions were not treated as competing solutions to this theorem.
+
+The principal comparisons were:
+
+**Ayyer, Linusson and Ravichandran.** I inspected the main problem statement and relevant appendix in full text. Their reported counterexample interval is \(0.56<q<1.43\); their general question is broader than the candidate’s conclusions. The candidate’s novelty is not the formulation of the problem. :chatgpt-content-reference{index="6"}
+
+**Gladkov, Pak and Zimin.** I inspected the relevant construction discussion and final remarks. The direct least-\(q\) question and the earlier cancellation/amplification ideas are the most important positioning material.
+
+**Dong.** I inspected the relevant flow-polynomial theorem and explicit polynomial. This confirms the manuscript’s attribution of the cubic and prevents it being counted as an independent new discovery.
+
+**Hollom.** I checked the primary record and abstract for the generalisation counterexamples; this was a background check, not a complete re-audit of that paper. :chatgpt-content-reference{index="7"}
+
+I found **no competing general Eulerian-flow transfer theorem in the material retrieved**. That is a qualified search result, not proof of absence. The remaining priority uncertainty chiefly concerns whether an equivalent connection is expressed elsewhere in different terminology.
+
+## 7. Minor comments
+
+**Clarify the numerical-root metadata.** The field called `roots` in `flow_witness.json` contains floating-point discovery values. Rename it to something such as `approximate_above_two_roots` and mark it explicitly as non-certifying. The released proof does not rely on these numbers.
+
+**Add a compact proof-dependency map.** A short paragraph connecting the word identity, real-\(q\) fan limit, amplification lemma, and two witness families would help readers distinguish general theorems from finite certificate checks.
+
+**Preserve the quantifier warnings.** The existing distinction between a parameter-dependent graph and one graph working for an entire parameter range is excellent. It should remain prominent in any abstract, release page, or publicity.
+
+**Keep the source correction version-specific.** “ALR Lemma A.1 as printed in arXiv v1” is more precise than referring to an unqualified permanent defect in the authors’ work.
+
+**Document negative tests.** The release currently documents successful checks well. Add a brief statement of what happens with a corrupted coefficient, corrupted recipe, failed compiler invocation, and optimised Python execution.
+
+**Presentation.** The inspected PDF pages were readable, and the large formulas and certificate table were not visibly clipped. There is no need to expand the paper substantially; a modest addition to Section 3 would address its main readability issue.
+
+## 8. Prioritised revision plan
+
+### Must fix before the verification package is treated as release-ready
+
+Repair optimisation-mode validation and remove side effects from assertions. Add a regression test demonstrating rejection of a corrupted expected coefficient. Regenerate the receipts and manifest after this change.
+
+Add precise attribution for the prior least-\(q\) question and delimit the relationship to the broader integer/noninteger suggestion.
+
+### Should fix to strengthen the paper
+
+Expand the finite-\(L\), real-\(q\) continuation into a separately identifiable lemma. Include small three-post tests with noninteger \(q\), where the unnamed-colour weight can be negative; the referee bundle supplies suitable examples.
+
+Add the proof-dependency map and label approximate root data unambiguously.
+
+### Could improve presentation or future work
+
+Sharper fan and amplification estimates could greatly reduce graph sizes. Further negative Eulerian flow witnesses could enlarge the excluded parameter set.
+
+Neither improvement is necessary to validate the present results. I would not delay this paper until the complete parameter classification is solved.
+
+## 9. Editorial recommendation
+
+**Minor revisions.**
+
+I found no basis for rejection or for requiring another major theorem before publication. The core arguments are coherent, the finite certificates reproduce, and targeted additional tests support the steps most vulnerable to implementation or normalisation mistakes.
+
+The recommendation is contingent on repairing the checker defect and making the positioning and real-\(q\) exposition clearer. The checker repair should be verified by an explicit negative test, not merely by another successful run on the original data.
+
+My confidence is **high for the reproduced finite claims and the identified software defect**, and **moderately high for the general mathematical argument**. The remaining uncertainty concerns the usual limits of a non-formal proof audit and the completeness of the priority search.
+
+## 10. Provisional REF calibration
+
+### Assessment basis
+
+The natural unit is **UoA 10, Mathematical Sciences, Main Panel B**. The official REF 2029 overview retrieved during review still states that detailed panel criteria and the quality-rating system will be set out subsequently. I therefore use the established REF 2021 Main Panel B descriptors as an explicit prospective benchmark, not as a claim about finalised 2029 scoring rules. :chatgpt-content-reference{index="8"}
+
+Those descriptors distinguish internationally excellent work from work at the forefront of a research area, with substantial novelty or the potential to shape its agenda. They expressly allow assessment of potential influence; an established citation history is not a prerequisite. :chatgpt-content-reference{index="9"}
+
+| Dimension | Prospective assessment | Reason |
+|---|---|---|
+| **Originality** | **4★, moderate confidence** | A general connection between Eulerian flow-polynomial negativity and full homogeneous random-cluster bunkbed failure, with a nontrivial real-\(q\) transfer. |
+| **Significance** | **4★, moderate confidence** | Resolves the least-universal-\(q\) question and overturns the possibility of upward-closed universal validity. The method provides a reusable route to further exclusions. |
+| **Rigour** | **4★-compatible, moderately high confidence** | A complete written argument, exact finite certificates, two distinct principal enumeration methods, explicit analytic bounds, and successful additional checks. The verifier needs the bounded repair identified above. |
+| **Overall output quality** | **Prospective 4★** | The combination of a general method and qualitative resolution of explicit questions is stronger than an incremental parameter extension. |
+
+### Why I place it above a routine 3★ assessment
+
+My judgement is not based on the number of vertices, the number of subsets enumerated, or the presence of an extensive evidence bundle.
+
+The decisive point is the change in mathematical understanding: the paper identifies an algebraic source of bunkbed failure, proves that this source survives a demanding transfer to the original graph model, and derives two qualitative conclusions about universal validity.
+
+A narrower paper supplying only the twelve-vertex flow polynomial or a slightly improved numerical interval would not receive the same assessment from me.
+
+### Why the rating remains provisional
+
+A specialist could reasonably place the work at the strong 3★/4★ boundary if closer prior art substantially reduced the transfer theorem’s originality or if its influence proved more local than the present argument suggests. The targeted search did not establish either concern, but cannot eliminate them.
+
+**My best present judgement is nevertheless 4★, with moderate confidence—not “3★ until an unrelated further breakthrough is added.”**
+
+This is a quality assessment of the output. Actual REF submission eligibility, including any required institutional link, is a separate question. :chatgpt-content-reference{index="10"}
+
+## 11. References
+
+### Bunkbed and random-cluster research
+
+Ayyer, A., Linusson, S., & Ravichandran, M. (2025). *The bunkbed problem and the random cluster model* (arXiv:2509.18788, version 1). arXiv. DOI: 10.48550/arXiv.2509.18788. :chatgpt-content-reference{index="11"}
+
+Gladkov, N., Pak, I., & Zimin, A. (2025). The bunkbed conjecture is false. *Proceedings of the National Academy of Sciences, 122*(24), e2420725122. DOI: 10.1073/pnas.2420725122. Relevant full text consulted in the author-hosted version. :chatgpt-content-reference{index="12"}
+
+Hollom, L. (2024). *The bunkbed conjecture is not robust to generalisation* (arXiv:2406.01790). arXiv. DOI: 10.48550/arXiv.2406.01790. Primary record and abstract consulted. :chatgpt-content-reference{index="13"}
+
+### Flow polynomials
+
+Dong, F. M. (2014). *On zero-free intervals of flow polynomials* (arXiv:1403.1916, version 1). arXiv. The relevant full-text result is Theorem 4.3 and equation (4.7). :chatgpt-content-reference{index="14"}
+
+### REF assessment framework
+
+Research Excellence Framework. (2019, updated 2020). *Panel criteria and working methods* (REF 2019/02), especially Main Panel B, paragraph 202. :chatgpt-content-reference{index="15"}
+
+Research Excellence Framework. (2026). *REF 2029 guidance: Section 1—Overview; Section 4—Contributions to Knowledge and Understanding*. Current guidance consulted on 30 September 2026. :chatgpt-content-reference{index="16"}
+
+**Overall conclusion:** The central mathematics appears sound and the contribution is substantial. Repair the verifier, sharpen the attribution, and make the real-\(q\) argument easier to inspect. On the evidence reviewed, this merits treatment as a **credible prospective REF 4★ output**.
+
+[END]

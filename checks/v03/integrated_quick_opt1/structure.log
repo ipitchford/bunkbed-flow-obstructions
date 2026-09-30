@@ -1,0 +1,3 @@
+{"check": "connected simple Eulerian witnesses, exact interval checks, finite graph recipe arithmetic and pendant thresholds", "status": "PASS", "recipes": [{"q": "3/2", "word": [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2], "L": 19, "k": 3565, "core_vertices": 232, "core_edges": 468, "base_vertices": 10927, "base_edges": 11163, "full_vertices": 21854, "full_edges": 33253}, {"q": "9/10", "word": [0, 1, 2, 0, 1, 2], "L": 21, "k": 1099, "core_vertices": 130, "core_edges": 258, "base_vertices": 3427, "base_edges": 3555, "full_vertices": 6854, "full_edges": 10537}]}
+
+STDERR:

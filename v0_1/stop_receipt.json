@@ -1,0 +1,24 @@
+{
+  "status": "PARTIAL_RESULT_NOT_FULL_SOLUTION",
+  "requested_problem": "ALR Problem 1.4 / supplied brief Problem 8",
+  "completed": [
+    "Eulerian-flow transfer",
+    "All-p failure for 1<q<2",
+    "Least universal q>1 equals 2",
+    "All-p failure on [21/10,9/4]",
+    "Finite exact witnesses and reproducible verification bundle"
+  ],
+  "unclosed_obligations": [
+    "Classify the remaining q>2 values, including integer q>=3",
+    "Complete the low-q portion of the (p,q) classification"
+  ],
+  "specific_obstacles": [
+    "The fan eigenvalue ordering used in the proof reverses for q<1",
+    "Eulerian flow polynomials are positive at integer q>=2, so a negative-flow witness cannot settle those integer points",
+    "No construction or positivity theorem has been established here for the remaining parameter ranges"
+  ],
+  "reason_not_full": "The listed mathematical obligations are unproved in this work, not merely labelled open in the literature.",
+  "external_priority_review": "pending",
+  "external_adversarial_review": "pending",
+  "publication_write_performed": false
+}

@@ -1,0 +1,515 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,longtable,microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,xcolor,xurl,hyperref,fancyhdr}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
+ pdftitle={Flow-polynomial obstructions to the random-cluster bunkbed inequality},
+ pdfauthor={Evidence Press candidate},pdfsubject={Partial resolution; exact certificates; not a complete classification}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Evidence Press\enspace /\enspace Mathematics candidate}
+\fancyhead[R]{\small v0.1.0}
+\fancyfoot[L]{\small 30 September 2026}\fancyfoot[R]{\small\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\renewcommand{\headrulewidth}{0.3pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\diag}{diag}
+\newcommand{\one}{\mathbf 1}\newcommand{\N}{\mathcal N}
+\newcommand{\R}{\mathcal R}\newcommand{\CC}{\mathcal C}
+\newcommand{\bb}{\square K_2}
+\title{\vspace{-10mm}\textbf{Flow-polynomial obstructions to the\newline random-cluster bunkbed inequality}\\[3mm]
+\large The least universal $q>1$, and counterexamples above the Ising point}
+\author{}\date{Evidence Press candidate release\enspace\textbullet\enspace 30 September 2026}
+\begin{document}
+\maketitle\vspace{-7mm}
+\begin{abstract}
+We give a partial resolution of the random-cluster bunkbed problem. For a word of post labels, the signed connection numerator of a conditioned-post hypergraph chain is exactly a positive monomial times the flow polynomial of the word's Eulerian transition multigraph. We prove that every negative evaluation of such a flow polynomial at a real $q>1$ transfers to a counterexample on a finite simple full bunkbed graph, at every prescribed homogeneous edge probability $p\in(0,1)$. Evenly thickened triangles consequently yield counterexamples for every $1<q<2$. Together with H\"aggstr\"om's known Ising result, this determines the least universal $q>1$ to be exactly $2$. A twelve-vertex Eulerian graph gives counterexamples for every $q\in[21/10,9/4]$, so universal validity is not upward-closed in $q$. The finite certificates include two independent flow-polynomial enumerations, a Bernstein negativity certificate, independent exact checks of a conditioned graph, and rational error bounds for a full-graph construction at $q=21/10$.
+\end{abstract}
+\vspace{1mm}
+\noindent\fcolorbox{black!35}{black!3}{\parbox{0.965\linewidth}{\small
+\textbf{Scope and assurance.} This is a research candidate, not a complete solution of Ayyer--Linusson--Ravichandran Problem 1.4. The manuscript supplies proofs and reproducible exact computations; it is not externally peer reviewed or formally verified. Its novelty has not been established by an exhaustive priority audit. No claim of publication on the Evidence Press website is made.}}
+
+\section{The question and the results}
+For a finite simple graph $G=(V,E)$, its full bunkbed is $G\bb$. Write $u_i=(u,i)$, $i\in\{0,1\}$. At $q>0$ and $0<p<1$, set $x=p/(1-p)$. The random-cluster probability of an edge set $A$ is proportional to $q^{k(A)}x^{|A|}$, where isolated vertices count towards $k(A)$. Define
+\begin{equation}\label{eq:signed}
+\N_G(q,x)=\sum_{A\subseteq E(G\bb)}q^{k(A)}x^{|A|}
+\big(\one_{u_0\leftrightarrow v_0}-\one_{u_0\leftrightarrow v_1}\big).
+\end{equation}
+The partition function is strictly positive. Thus the desired bunkbed inequality holds precisely when $\N_G(q,x)\ge0$.
+
+Ayyer, Linusson, and Ravichandran formulate the full parameter question as Problem 1.4, record the positive result at $q=2$, and report counterexamples for $0.56<q<1.43$ \cite{ALR}. Their construction builds on Hollom and on the graph counterexample of Gladkov, Pak, and Zimin \cite{GPZ,Hollom}. We do not assume that the set of valid $q$ is an interval.
+
+For a multigraph $\Gamma$ on $t$ vertices and $m$ edges, use the flow-polynomial convention
+\begin{equation}\label{eq:flow}
+F_\Gamma(q)=\sum_{B\subseteq E(\Gamma)}(-1)^{m-|B|}q^{|B|-t+k(B)}.
+\end{equation}
+Our central transfer result is the following.
+\begin{theorem}[Eulerian-flow transfer]\label{thm:transfer}
+Let $\Gamma$ be a connected loopless Eulerian multigraph and let $q>1$ satisfy $F_\Gamma(q)<0$. For every $p\in(0,1)$, there is a finite connected simple graph $G$, and vertices $u,v\in V(G)$, for which the homogeneous random-cluster measure on the full bunkbed $G\bb$ satisfies
+\[
+\mu_{p,q}(u_0\leftrightarrow v_0)<\mu_{p,q}(u_0\leftrightarrow v_1).
+\]
+The construction is explicit from an Euler circuit, a sufficiently long uniform fan, and sufficiently many pendant vertices at designated posts.
+\end{theorem}
+\begin{corollary}\label{cor:main}
+For every $p\in(0,1)$ and every
+\[
+q\in(1,2)\ \cup\ [21/10,9/4],
+\]
+there is a counterexample on a finite connected simple full bunkbed graph. The least $q>1$ for which the inequality holds for every finite graph and every $p\in[0,1]$ is exactly $2$. The set of such universal $q$ is not upward-closed.
+\end{corollary}
+The graph is allowed to depend on both parameters. This does not contradict a positive result near $p=1$ for each fixed graph. It also does not classify every pair $(p,q)$ outside the displayed ranges.
+
+\section{A word identity}
+\subsection{The auxiliary hypergraph}
+Let $w=(c_1,\ldots,c_m)$ be a nonempty word using exactly $t$ labels, called posts. Introduce distinct path vertices $z_0,\ldots,z_m$, disjoint from the posts, and hyperedges
+\[
+h_i=\{z_{i-1},z_i,c_i\}.
+\]
+Take two path copies and identify the two copies of every post. The two copies of $h_i$ each have absent weight $1$ and present weight $\lambda_i$. A present hyperedge connects its three vertices. Define the signed random-cluster numerator $\N_w(q;\lambda)$ between $z_{0,0}$ and $z_{m,0},z_{m,1}$ by the analogue of \eqref{eq:signed}.
+
+Let $\Gamma_w$ have the posts as vertices and the cyclic transition edges
+\[
+(c_i,c_{i+1}),\qquad 1\le i\le m,\quad c_{m+1}=c_1.
+\]
+It is connected and Eulerian; it may have loops or parallel edges.
+\begin{theorem}[Exact word identity]\label{thm:word}
+As a polynomial identity, with the quotient at $q=1$ interpreted removably,
+\begin{equation}\label{eq:word}
+\boxed{\displaystyle
+\N_w(q;\lambda)=q^{t+2}\left(\prod_{i=1}^m\lambda_i\right)
+\frac{F_{\Gamma_w}(q)}{q-1}.}
+\end{equation}
+\end{theorem}
+\begin{proof}
+First take integer $q\ge2$ and fix the post colours $s_c\in[q]$. Expanding each factor $1+\lambda_i\one_{\text{all three colours agree}}$ gives the random-cluster weight: every connected component can be coloured in $q$ ways. Put $J=\one\one^\top$ and
+\[
+M_{s,i}=J+\lambda_i e_se_s^\top,\qquad
+K=\prod_{i=1}^m M_{s_{c_i},i},\qquad z=\one^\top K\one.
+\]
+For two layers conditional on the post colours, the unnormalized difference of same-colour events is
+\begin{equation}\label{eq:S}
+S=z\tr K-\one^\top K^2\one.
+\end{equation}
+Indeed, the within-layer term is $z\tr K$, whereas the cross-layer term pairs the first-layer initial marginal with the second-layer final marginal. On averaging all colours, the difference of connectivity indicators is $q/(q-1)$ times the difference of equality indicators.
+
+Write $u_s=\one\wedge e_s$ in the second exterior power. Direct expansion gives
+\[
+\bigwedge^2 M_{s,i}=\lambda_i u_su_s^\top,
+\qquad \langle u_s,u_a\rangle=q\delta_{sa}-1.
+\]
+For any $K$, the expression in \eqref{eq:S} equals
+$\sum_a\langle u_a,(\bigwedge^2K)u_a\rangle$. Since
+$\sum_a u_au_a^\top$ is $q$ times the projection onto
+$\one\wedge\one^\perp$, and the product here is supported on that subspace,
+\[
+S=q\left(\prod_i\lambda_i\right)
+\prod_{i=1}^m(q\delta_{s_{c_i},s_{c_{i+1}}}-1).
+\]
+Finally, expanding the product and summing over all post colours gives
+\begin{align*}
+\sum_{s\in[q]^t}\prod_{ab\in E(\Gamma_w)}(q\delta_{s_a,s_b}-1)
+&=\sum_{B\subseteq E(\Gamma_w)}(-1)^{m-|B|}q^{|B|+k(B)}\\
+&=q^tF_{\Gamma_w}(q).
+\end{align*}
+Multiplying by $q/(q-1)$ proves \eqref{eq:word} for every integer $q\ge2$. Both sides, after multiplication by $q-1$, are polynomials, so the identity holds identically. In particular the apparent pole is removable.
+\end{proof}
+For $w=ABCACB$ or $ABCABC$, the transition graph is the doubled triangle and
+\[
+F_{2C_3}(q)=(q-1)(q^3-5q^2+10q-7).
+\]
+This recovers the cubic occurring in the ALR auxiliary calculation. The cubic and its real root near $1.430159709$ already occur in the flow-polynomial literature \cite{Dong}; the cubic itself is not a new result. The contribution here is the general word identity and its homogeneous graph transfer.
+
+\section{Uniform fans and real-$q$ continuation}
+\subsection{The ordinary graph}
+Take a loopless Eulerian transition graph and an Euler word $w$ of length $m$. Replace the triple $\{a,b,c\}$ at position $i$ by a fan: a rim path
+\[
+b=y_0-y_1-\cdots-y_L=c
+\]
+and all $L+1$ spokes $ay_j$. Give every edge the same activity $x>0$. Consecutive fans share the appropriate rim endpoint and no internal rim vertices. Their post labels are distinct at a common endpoint because the transition graph has no loops. Therefore the resulting base graph $G_{w,L}$ is simple, and
+\begin{equation}\label{eq:corecounts}
+n=t+mL+1,\qquad e=m(2L+1).
+\end{equation}
+Deleting the $t$ posts leaves a single path whose endpoints are $u,v$.
+
+For the moment, wire the two copies of each designated post and omit all other vertical edges. Let $\N_{w,L}^{T}(q,x)$ denote this conditioned-post numerator.
+
+\subsection{The fan matrix and its two dominant eigenvalues}
+Set $f=1+x$, $D_s=I+xe_se_s^\top$, and $R=J+xI$. Conditional on the colour $s$ of the post, the one-layer fan transfer is
+\begin{equation}\label{eq:fan}
+M_{s,L}=D_s(RD_s)^L.
+\end{equation}
+On $\operatorname{span}\{e_s,\one-e_s\}$, the matrix $RD_s$ is
+\[
+\begin{pmatrix}f(1+x)&q-1\\ f&q-1+x\end{pmatrix}.
+\]
+Write its trace, determinant and eigenvalues as
+\begin{equation}\label{eq:eigen}
+\tau=f(1+x)+q-1+x,\qquad d=fx(q+x),\qquad
+\lambda_\pm=\frac{\tau\pm\sqrt{\tau^2-4d}}2.
+\end{equation}
+For every real $q>1$, both off-diagonal entries are positive and
+\begin{equation}\label{eq:ordering}
+0<x<\lambda_-<\lambda_+.
+\end{equation}
+To check the nontrivial comparison, the characteristic polynomial at $x$ equals
+$x(q-1)(f-1)>0$, and $x<\tau/2$. Its two positive roots therefore both exceed $x$.
+The complementary colour subspace has eigenvalue $x$.
+
+In the genuine integer-colour representation, if
+\[
+a_L=\frac{fd^L}{q-1},\qquad \R_s=(\one\wedge e_s)(\one\wedge e_s)^\top,
+\]
+then
+\begin{equation}\label{eq:wedge-limit}
+a_L^{-1}\bigwedge^2 M_{s,L}\longrightarrow\R_s.
+\end{equation}
+The determinant on the distinguished plane is $fd^L$; the other exterior modes have relative decay at most a constant times $(x/\lambda_-)^L$.
+A statement about integer $q$ alone would not justify using this limit at a noninteger $q$. The next subsection supplies the required finite algebraic continuation.
+
+\subsection{A finite representation for every real $q$}\label{sec:continuation}
+Group the $t$ post colours according to their equality partition $\pi$. If $\pi$ has $r$ blocks, the number of ways to assign distinct colours to those blocks is the falling factorial $(q)_r=q(q-1)\cdots(q-r+1)$.
+For each partition use $r+1$ coordinates: its $r$ named colours and a common unnamed-colour coordinate. Put
+\[
+v=(1,\ldots,1)^\top,\qquad w_r=(1,\ldots,1,q-r)^\top,
+\qquad J_r=vw_r^\top.
+\]
+In this subsection replace $J$ by $J_r$ in \eqref{eq:fan}; each post has the named coordinate corresponding to its block. Let
+\[
+K_\pi=\prod_{i=1}^m M_{\pi(c_i),L},\qquad z_\pi=w_r^\top K_\pi v.
+\]
+For integer $q\ge t+1$, the omitted subspace of colour functions has dimension $q-r-1$, and $K$ acts on it by $x^{Lm}$. Thus
+\begin{equation}\label{eq:finite}
+\N_{w,L}^{T}(q,x)=\frac q{q-1}\sum_{\pi\in\Pi_t}(q)_{|\pi|}
+\left[z_\pi\big(\tr K_\pi+(q-|\pi|-1)x^{Lm}\big)
+-w_{|\pi|}^\top K_\pi^2v\right].
+\end{equation}
+Every term is a polynomial in $q,x$, apart from the displayed common $q-1$ denominator. Equality for infinitely many integers proves the rational identity for all $q\ne1$. In particular, negative values of a falling factorial or of $q-r$ are algebraic coefficients, not probabilities.
+
+Here is the limit in this representation. The projection onto the distinguished plane is
+\[
+P_s=e_se_s^\top+\frac{(v-e_s)(w_r-e_s)^\top}{q-1}.
+\]
+It commutes with $R,D_s$ and is well defined for every $q>1$. Its complementary projection $W_s=I-P_s$ satisfies
+\[
+M_{s,L}=H_{s,L}+x^LW_s,\qquad H_{s,L}=M_{s,L}P_s.
+\]
+The second compound $C_2(H_{s,L})$ is exactly $a_L\R_s$, now with
+\begin{equation}\label{eq:rankone}
+\R_s=(v\wedge e_s)(w_r\wedge e_s)^\top.
+\end{equation}
+All other terms in $C_2(M_{s,L})/a_L$ tend to zero by \eqref{eq:ordering}. Also
+$\|K_\pi\|=O(\lambda_+^{Lm})$, so the extra term
+$x^{Lm}z_\pi/a_L^m$ tends to zero.
+
+For clarity, if $C_2(K)$ is indexed by increasing pairs, define the oriented-minor contraction
+\begin{equation}\label{eq:contraction}
+\CC_w(C_2(K))=\sum_{i,j,k}w_i\det K_{(i,j),(k,j)}
+=(w^\top Kv)\tr K-w^\top K^2v,
+\end{equation}
+where a repeated index gives zero and reversing a pair changes its sign. Formula \eqref{eq:finite} can therefore be passed to the limit using finitely many finite matrices. The contraction of the product of \eqref{eq:rankone} is the same product $q\prod_i(q\delta_{s_{c_i},s_{c_{i+1}}}-1)$ that appears in the word proof. For each fixed partition, this last contraction identity holds for every integer $q\ge t+1$ and hence polynomially for every real $q$. Summing the equality partitions recovers the colour sum.
+
+\begin{proposition}[Uniform fan limit]\label{prop:fanlimit}
+For a fixed word with loopless cyclic transition graph, every $q>1$, and every $x>0$,
+\begin{equation}\label{eq:limit}
+\boxed{\displaystyle
+\lim_{L\to\infty}\frac{\N_{w,L}^{T}(q,x)}{a_L^m}
+=q^{t+2}\frac{F_{\Gamma_w}(q)}{q-1}.}
+\end{equation}
+In particular, a negative flow value gives a negative conditioned-post numerator at some finite $L$.
+\end{proposition}
+The proof above establishes the limit for real $q$, rather than continuing an inequality from the integers. Appendix~\ref{app:bound} gives an explicit rational bound on its error.
+
+\section{From conditioned posts to the full bunkbed}\label{sec:posts}
+\begin{lemma}[Exact post amplification]\label{lem:amplify}
+Let a finite simple base graph have a designated post set $T$ such that deleting $T$ leaves a path from $u$ to $v$ containing all nonpost vertices. Suppose its conditioned-post numerator at $q>0,x>0$ is negative. Attaching sufficiently many pendant base vertices to each post gives a negative numerator on the full bunkbed, with every edge still having activity $x$.
+\end{lemma}
+\begin{proof}
+In the full core, temporarily give the $t=|T|$ designated vertical edges activity $y$, leaving every other edge at activity $x$. Its numerator is a polynomial
+\[
+\N(y)=\sum_{j=0}^t a_jy^j.
+\]
+Its leading coefficient is exactly
+\begin{equation}\label{eq:leading}
+a_t=\N^T.
+\end{equation}
+To see this, fix all designated verticals open. If any additional nonpost vertical is open, wire that vertex and interchange the two layers on the suffix of the nonpost path beyond it. Designated posts stay fixed. This is an automorphism of the wired graph, preserves every weight and component count, and exchanges the two target connection events. The signed contribution is zero. At a target vertex the two events already agree. The only surviving contribution has all additional verticals closed, and is precisely the conditioned-post numerator.
+
+A pendant base vertex yields, in the full bunkbed, a three-edge path between the copies of its adjacent post. Summing its two internal vertices gives the exact two-terminal factor
+\[
+D(1+r\delta),\qquad D=q^2+3qx+3x^2,\qquad r=x^3/D>0.
+\]
+In random-cluster language this is a positive factor $D$ and an effective edge of activity $r$. With $k$ pendants at a post, the effective vertical activity, including the original vertical edge, is
+\begin{equation}\label{eq:yk}
+y_k=(1+x)(1+r)^k-1\longrightarrow\infty.
+\end{equation}
+All eliminated factors are positive. Since $a_t<0$, the numerator is negative for sufficiently large $k$.
+\end{proof}
+This is an exact network reduction, not an independence assumption about random-cluster edges. Applying Lemma~\ref{lem:amplify} to Proposition~\ref{prop:fanlimit} proves Theorem~\ref{thm:transfer}.
+
+For a fully specified finite construction, suppose the core has $n$ vertices, $e$ edges, and $a_t\le-\delta<0$. Put
+\begin{equation}\label{eq:Bamp}
+B=\max(1,q)^{2n}(1+x)^{2e+n-t}.
+\end{equation}
+Then $|a_j|\le\binom tj B$. For $y\ge1$,
+\[
+\N(y)\le-\delta y^t+(2^t-1)By^{t-1}.
+\]
+It is sufficient that $y>\max(1,2^tB/\delta)$. An entirely rational sufficient choice is
+\begin{equation}\label{eq:ks}
+h=\lceil1/r\rceil,\qquad
+2^s>\max(2,2^{t+1}B/\delta),\qquad k=hs.
+\end{equation}
+Bernoulli's inequality gives $(1+r)^h\ge2$, so this choice satisfies the required bound. The final base graph has $n+tk$ vertices and $e+tk$ edges.
+
+\section{Consequences for the parameter question}
+\subsection{Every $1<q<2$ fails}
+Let $\ell$ be a positive even integer and let $\ell C_3$ denote a triangle with $\ell$ parallel edges on each side. An Euler word is $(ABC)^\ell$. With $z=q-1$, expansion over the three post colours, or diagonalization of the three-cycle colour transfer, gives
+\begin{equation}\label{eq:thick}
+F_{\ell C_3}(q)=q^{-3}\left[(z^\ell+z)^3+z(z^\ell-1)^3\right],
+\qquad
+\frac{F_{\ell C_3}(q)}{q-1}
+=\frac{z^{3\ell-1}+3z^\ell+z-1}{q^2}.
+\end{equation}
+These are identities for the polynomial defined in \eqref{eq:flow}; the displayed denominators cancel. For example, in the colour sum each edge bundle contributes $z^\ell$ when its endpoints have equal colours and $1$ otherwise. The matrix of these weights has eigenvalues $z^\ell+q-1$ and $z^\ell-1$, of multiplicities $1$ and $q-1$; its cubic trace proves the first formula for integer $q$, hence identically. Expanding it gives the second formula.
+
+When $1<q<2$, we have $0<z<1$. Choose an even $\ell\ge2$ such that
+\[
+4z^\ell<1-z.
+\]
+Since $z^{3\ell-1}\le z^\ell$, the last numerator in \eqref{eq:thick} is negative. Theorem~\ref{thm:transfer} applies at every prescribed $p\in(0,1)$. For $q=3/2$, one can take $\ell=4$ and obtains
+\[
+F_{4C_3}(3/2)=-71/1024.
+\]
+The construction has only three designated posts, although its size grows as $q$ approaches $2$.
+
+\subsection{The known positive point and the exact minimum}
+\begin{proposition}[H\"aggstr\"om's Ising point]\label{prop:ising}
+At $q=2$ the bunkbed inequality holds on every finite graph for every $p\in[0,1]$.
+\end{proposition}
+\begin{proof}[Proof using the standard Ising association inequality]
+This is the known theorem of H\"aggstr\"om \cite{Haggstrom}; the following argument records the relevant hypotheses. Condition on the open vertical-edge set and contract it. In the Ising representation, further condition on the spins of the resulting posts. The unpinned spins in the two layers are independent copies of the same ferromagnetic Ising model with fixed boundary spins. Arbitrary signs of the induced boundary fields do not affect the FKG lattice condition \cite{FKG}. Thus the conditional covariance of the endpoint spins in one layer is nonnegative. The cross-layer spin product has conditional expectation equal to the product of their means. Averaging the resulting same-layer minus cross-layer inequality and using the random-cluster/Ising colour expansion proves the claim. If an endpoint is pinned, its conditional covariance is zero. Finally average over the vertical-edge set. The endpoints $p=0,1$ follow directly.
+\end{proof}
+Every $q\in(1,2)$ fails, whereas $q=2$ succeeds. This proves the minimum assertion in Corollary~\ref{cor:main}; it is a minimum, not merely an infimum.
+
+\subsection{An obstruction above $2$}\label{sec:above}
+Let $\Gamma_*$ be the simple graph on $\{0,\ldots,11\}$ specified by the following closed Euler word:
+\begin{equation}\label{eq:wordstar}
+\begin{split}
+w_*={}&(0,3,8,1,5,6,2,10,5,4,9,3,\\
+       &6,11,9,1,10,7,4,0,7,8,2,11).
+\end{split}
+\end{equation}
+Each cyclically consecutive pair is one unordered edge. The complete edge list is also supplied in \texttt{flow\_witness.json}.
+The closing transition is $11\to0$. The graph is connected and $4$-regular. Direct exact enumeration gives $F_{\Gamma_*}(q)=(q-1)P(q)$, where
+\begin{equation}\label{eq:poly}
+\begin{split}
+P(q)={}&q^{12}-23q^{11}+253q^{10}-1759q^9+8615q^8-31366q^7\\
+ &+87285q^6-187746q^5+311174q^4-389370q^3\\
+ &+350419q^2-203812q+57709.
+\end{split}
+\end{equation}
+In particular,
+\begin{equation}\label{eq:negativevalue}
+F_{\Gamma_*}(21/10)=-\frac{20868388946779}{10^{13}}<0,
+\qquad
+F_{\Gamma_*}(9/4)=-\frac{57285175}{67108864}<0.
+\end{equation}
+Endpoint values alone do not prove negativity between them. Appendix~\ref{app:bernstein} gives all thirteen strictly negative Bernstein coefficients of $P$ on $[21/10,9/4]$, proving negativity on the entire closed interval. Theorem~\ref{thm:transfer} now proves its failure assertion at every $p\in(0,1)$. Since $2$ itself is a universal positive point, universal validity is not upward-closed.
+
+\section{Finite witnesses and reproducibility}\label{sec:certificates}
+\subsection{Two fully specified cases at $p=1/2$}
+All ordinary graph edges in this subsection have activity $x=1$, hence $p=1/2$.
+For $q=3/2$ use $w=(ABC)^4$, $L=20$, and $k=9370$ pendants per designated post. The conditioned core has $244$ vertices and $492$ edges. Its signed numerator is strictly negative by two independent exact computations: a connectivity-frontier recurrence and the finite post-colour formula \eqref{eq:finite}. The full rational value is stored in \texttt{q\_3\_2\_core.json}; no rounding is used.
+
+For $q=21/10$, use \eqref{eq:wordstar}, $L=1000$, and $k=1515626$ pendants per designated post. Here $\tau=61/10$, $d=31/5$, and
+\[
+\tau^2-4d=1241/100>3^2,
+\qquad (5/4)^2-\tau(5/4)+d=11/80>0.
+\]
+Consequently $x/\lambda_-<4/5$. The rational bound in Appendix~\ref{app:bound} proves
+\begin{equation}\label{eq:finitegap}
+\left|\frac{\N_{w_*,1000}^{T}(21/10,1)}{a_{1000}^{24}}-C_*\right|<10^{-36},
+\quad
+C_*=-\frac{6154125714915266481205245044409}{10^{26}}<-60000,
+\end{equation}
+where $a_{1000}=(20/11)(31/5)^{1000}$. Thus
+$\delta=(-C_*/2)a_{1000}^{24}$ is a valid positive lower bound on the negative core numerator's magnitude.
+
+Formula \eqref{eq:ks} gives $(h,s)=(10,937)$ and $(14,108259)$ respectively. The resulting sizes are
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+ & $q=3/2$ & $q=21/10$\\
+\midrule
+Core base vertices & 244 & 24013\\
+Core base edges & 492 & 48024\\
+Pendants per post & 9370 & 1515626\\
+Final base vertices & 28354 & 18211525\\
+Final base edges & 28602 & 18235536\\
+Full bunkbed vertices & 56708 & 36423050\\
+Full bunkbed edges & 85558 & 54682597\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are conservative existence certificates, not optimized graph sizes. The large full graph is specified by a compact deterministic recipe; it was not enumerated over all of its edge subsets.
+
+\subsection{Independent checks and their limits}
+The twelve-vertex flow polynomial is reconstructed in two different ways. The first enumerates all $2^{24}=16777216$ edge subsets in \eqref{eq:flow}, using a rollback union--find calculation of component counts. The second enumerates all $4213597$ partitions of its twelve vertices. If $h(\pi)$ counts edges whose endpoints lie in the same block, the independent reconstruction is
+\begin{equation}\label{eq:partitionflow}
+q^{12}F_{\Gamma_*}(q)=\sum_{\pi\in\Pi_{12}}(q)_{|\pi|}
+(-1)^{24-h(\pi)}(q-1)^{h(\pi)}.
+\end{equation}
+Both give exactly the same integer coefficient vector. The Bernstein change of basis is also reconstructed in the reverse direction.
+
+The $q=3/2$ core check uses integer arithmetic with explicit denominator clearing. Its frontier holds the designated posts, the initial vertex, and the two current rim vertices. Closing a component multiplies its weight by $q$. A second implementation uses rational matrices in \eqref{eq:finite}. Four smaller cases, including noninteger $q<1$, are checked against direct edge-subset enumeration as well. Ten hypergraph words, including loops and repeated labels, are checked against \eqref{eq:word}; all surviving multivariate activity exponents are exactly one.
+
+These are algorithmically independent checks, not independent human reviews. The general transfer theorem is justified by the written proof and the explicit bounds, not by numerical testing. The $q=21/10$ certificate checks a sufficient analytic bound; it does not directly evaluate the large graph's partition function. The code requires no nonstandard Python packages; a C++17 compiler accelerates the two large finite enumerations.
+
+\section{Scope, priority, and unresolved parts}
+The result resolves the question of the least universal $q>1$ and rules out upward monotonicity from the Ising point. It does \emph{not} give the complete set of universally valid $(p,q)$ requested in ALR Problem 1.4.
+
+In particular, we do not classify every pair with $0<q\le1$, or all values above $2$ outside the certified negative interval. The known percolation counterexample and the reported ALR interval must not be mistaken for a classification of every $p$ in these ranges. We do not prove universal validity or produce ordinary-graph counterexamples for integer $q\ge3$.
+
+There are two precise limits to this method. At $0<q<1$, the ordering of the relevant fan modes changes; the proof of \eqref{eq:limit} does not extend. At a positive integer $q\ge2$, an Eulerian orientation carrying any constant nonzero group element is a nowhere-zero flow. Thus $F_\Gamma(q)\ge q-1>0$ for every Eulerian $\Gamma$: a negative-flow witness cannot settle those integer points. Neither observation proves that the bunkbed inequality holds in the unresolved regime.
+
+The elementary flow-polynomial formulae and the positive Ising point are credited to prior theory. The intended new contributions are the general word connection, its real-$q$ homogeneous graph transfer, and the resulting parameter exclusions. Searches checked the original ALR paper, the GPZ construction, and flow-polynomial sources as of 30 September 2026; they do not certify absence of all prior art. External adversarial review of the real-$q$ transfer, followed by a focused priority review, remains a release gate.
+
+\appendix
+\section{A rational error bound for the fan limit}\label{app:bound}
+We give the explicit estimate used by \texttt{verify\_asymptotic.py}. Fix $q>1$, $x>0$, $f=1+x$, $t,m\ge1$. Choose positive rational $g,\rho$ with
+\[
+g\le\sqrt{\tau^2-4d},\qquad x/\lambda_-\le\rho<1.
+\]
+For rational $q,x$, these inequalities can be certified by polynomial comparisons without approximating a square root. Define
+\begin{align*}
+S&=\max(q,2t-q),&P_0&=\max\left(1,\frac{2t-q-1}{q-1}\right),&W_0&=1+P_0,\\
+C&=\frac{P_0\{2f(S+x)+\tau\}}{g},&
+C_0&=(q-1)\left(2CW_0+\frac{W_0^2}{f}\right),\\
+\varepsilon_L&=C_0\rho^L,&A_0&=(q-1)P_0+1,&
+H_0&=(q-1)(C+W_0/f),\\
+U&=q+t+1,&B_t(q)&=\sum_{r=1}^t\left\{\!\begin{matrix}t\\r\end{matrix}\!\right\}|(q)_r|.
+\end{align*}
+The braces denote Stirling numbers of the second kind.
+\begin{lemma}\label{lem:error}
+If $\varepsilon_L\le1$, then the absolute error in \eqref{eq:limit} is at most
+\begin{equation}\label{eq:error}
+E_L=\frac q{q-1}B_t(q)
+\left[tS\,mA_0^{m-1}\varepsilon_L
++US H_0^m\rho^{Lm}\right].
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use the maximum absolute row-sum norm in each of the reduced representations. For a partition with $r\le t$ blocks, $\|w_r\|_1\le S$, $\|P_s\|_\infty\le P_0$, and $\|W_s\|_\infty\le W_0$. The two spectral projections of $RD_s$ on the distinguished plane are
+\[
+\frac{(RD_s-\lambda_-I)P_s}{\lambda_+-\lambda_-},\qquad
+\frac{(\lambda_+I-RD_s)P_s}{\lambda_+-\lambda_-}.
+\]
+Since $\|RD_s\|_\infty\le f(S+x)$, their norm sum is at most $C$. Hence
+$\|H_{s,L}\|_\infty\le fC\lambda_+^L$.
+
+Expansion of each two-by-two minor gives, for square matrices $A,B$,
+\[
+\|C_2(B)\|_\infty\le\|B\|_\infty^2,
+\quad
+\|C_2(A+B)-C_2(A)-C_2(B)\|_\infty
+\le2\|A\|_\infty\|B\|_\infty.
+\]
+Applying these to $M_{s,L}=H_{s,L}+x^LW_s$, and using
+$C_2(H_{s,L})=a_L\R_s$, gives
+\[
+\left\|a_L^{-1}C_2(M_{s,L})-\R_s\right\|_\infty
+\le(q-1)\left[2CW_0(x/\lambda_-)^L+
+\frac{W_0^2}{f}(x^2/d)^L\right]\le\varepsilon_L.
+\]
+The rank-one formula \eqref{eq:rankone} gives
+$\|\R_s\|_\infty\le(q-1)P_0$. A telescoping product of $m$ factors is therefore within
+$mA_0^{m-1}\varepsilon_L$ of the limiting product. The contraction \eqref{eq:contraction} has norm at most $r\|w_r\|_1\le tS$: for each ordered row pair, its oriented column pairs form a subset of the column pairs in one row of the compound matrix.
+
+It remains to bound the omitted-colour contribution. We have
+\[
+\|M_{s,L}\|_\infty\le f(C+W_0/f)\lambda_+^L,
+\quad |q-r-1|\le U,
+\quad |z_\pi|\le S\|K_\pi\|_\infty.
+\]
+Dividing $|(q-r-1)x^{Lm}z_\pi|$ by $a_L^m$ consequently gives at most
+$US H_0^m\rho^{Lm}$. Sum the two bounds over partitions with their absolute falling-factorial weights and multiply by $q/(q-1)$ as in \eqref{eq:finite}. This proves \eqref{eq:error}.
+\end{proof}
+At $q=21/10,x=1,t=12,m=24,L=1000$, the certificate uses $g=3$, $\rho=4/5$. Some intermediate exact constants are
+\[
+S=219/10,\quad P_0=19,\quad W_0=20,\quad
+C=18563/30,\quad C_0=411686/15,\quad H_0=207493/300.
+\]
+Direct rational comparisons verify $\varepsilon_L<1$, $E_L<10^{-36}$ and $E_L<-C_*/2$. Powers in these comparisons are computed as integers or rational numbers; logarithms and floating-point eigenvalues are not proof dependencies.
+
+\section{The closed-interval sign certificate}\label{app:bernstein}
+Put $a=21/10$, $b=9/4$, and $z=(q-a)/(b-a)$. The polynomial in \eqref{eq:poly} has the expansion
+\[
+P(a+(b-a)z)=\sum_{j=0}^{12}\beta_j\binom{12}{j}z^j(1-z)^{12-j}.
+\]
+The thirteen Bernstein basis functions are nonnegative on $[0,1]$ and sum to one. Every coefficient in the following table is strictly negative, including the endpoints. It follows that $P(q)<0$ on the entire closed interval, not just on a sampled grid.
+\begin{center}
+\begin{tabular}{r@{\qquad}l}
+\toprule
+$j$ & $\beta_j$\\
+\midrule
+0 & $-1897126267889/1000000000000$\\
+1 & $-1638507048299/800000000000$\\
+2 & $-472507171683/220000000000$\\
+3 & $-15476196947443/7040000000000$\\
+4 & $-3100190903929/1408000000000$\\
+5 & $-486611737077/225280000000$\\
+6 & $-65422642003/31539200000$\\
+7 & $-70138853011/36044800000$\\
+8 & $-12799896687/7208960000$\\
+9 & $-1803895261/1153433600$\\
+10 & $-34375609/26214400$\\
+11 & $-85374093/83886080$\\
+12 & $-11457035/16777216$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The checker derives this table from the independently reconstructed flow polynomial, then reconstructs the power coefficients from the table as a second check.
+
+\section{A source-level issue avoided by the proof}\label{app:source}
+ALR Lemma A.1, as printed in the inspected arXiv version, bounds a projected edge-set measure in terms of the number of common \emph{edges} of two graphs on the same vertex set \cite[p.~30]{ALR}. Taken literally, that statement is false. Let the vertex set be $\{a,b,c\}$, let $G$ have only edge $ab$, and let $H$ have edges $ac,bc$. There are no common edges. At $q=2$, $p=1/2$, the open probability of $ab$ is $1/3$ in $G$ and $5/14$ in $G\cup H$, contradicting the asserted equality when the common-edge count is zero.
+
+This observation alone does not disprove their theorem. It does mean that this particular bound cannot be imported without correction. Lemma~\ref{lem:amplify} uses instead an exact suffix symmetry and exact three-edge-path integration; neither it nor the fan limit depends on that bound.
+
+\section{Reproduction and assurance record}
+From the package root, run \texttt{python3 code/run\_all.py}. The checks reconstruct the flow polynomial twice, prove its interval sign, compare the two core evaluations, test the word identity on ten finite words, verify the rational asymptotic bound, and check the post-amplification parameters. Intermediate receipts are in \texttt{certificates/}; an executed consolidated receipt is in \texttt{checks/}. The supplied small base edge list is checked against its recipe, and both base graphs have fully specified vertex conventions.
+
+To stream the large base graph, run the following command:\par
+\noindent\texttt{python3 code/generate\_graph.py 21\_10 -{}-output graph.edges}\par
+The \texttt{-{}-full} option streams its full bunkbed instead. These optional outputs are large. Without an output argument the script prints only the exact recipe summary. Verification does not require materializing the large graph.
+
+Discovery used numerical exploration and finite graph searches, but all released computational proof dependencies use exact arithmetic. The written mathematics is not proof-assistant verified. No graph-minimality claim is made. The scope ledger distinguishes candidate claims, credited prior results, and unresolved parts of the full classification.
+
+\clearpage
+\begin{thebibliography}{99}
+\bibitem[ALR(2025)]{ALR} Ayyer, A., Linusson, S., \& Ravichandran, M. (2025).
+\emph{The bunkbed problem and the random cluster model}. arXiv:2509.18788, version 1.
+\url{https://arxiv.org/abs/2509.18788}
+\bibitem[Dong(2015)]{Dong} Dong, F. M. (2015). On zero-free intervals of flow polynomials.
+\emph{Journal of Combinatorial Theory, Series B, 111}, 181--200.
+Preprint: \url{https://arxiv.org/abs/1403.1916}
+\bibitem[FKG(1971)]{FKG} Fortuin, C. M., Kasteleyn, P. W., \& Ginibre, J. (1971).
+Correlation inequalities on some partially ordered sets.
+\emph{Communications in Mathematical Physics, 22}, 89--103.
+\url{https://doi.org/10.1007/BF01651330}
+\bibitem[GPZ(2025)]{GPZ} Gladkov, N., Pak, I., \& Zimin, A. (2025).
+The bunkbed conjecture is false.
+\emph{Proceedings of the National Academy of Sciences, 122}(24), e2420725122.
+\url{https://doi.org/10.1073/pnas.2420725122}
+\bibitem[H\"aggstr\"om(2003)]{Haggstrom} H\"aggstr\"om, O. (2003).
+Probability on bunkbed graphs. In \emph{Proceedings of FPSAC '03: Formal Power Series and Algebraic Combinatorics}.
+\url{https://igm.univ-mlv.fr/~fpsac/FPSAC03/ARTICLES/42.pdf}
+\bibitem[Hollom(2024)]{Hollom} Hollom, L. (2024).
+\emph{The bunkbed conjecture is not robust to generalisation}. arXiv:2406.01790.
+\url{https://arxiv.org/abs/2406.01790}
+\end{thebibliography}
+\end{document}

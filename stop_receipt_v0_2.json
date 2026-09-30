@@ -1,0 +1,26 @@
+{
+ "status": "PARTIAL_RESULT_NOT_FULL_SOLUTION",
+ "requested_problem": "ALR Problem 1.4 / brief Problem 8",
+ "completed_in_v0_2": [
+  "Independent audit of v0.1 (all claims stand; two presentational gaps closed)",
+  "Exact interval for Gamma_*",
+  "Analytic failure on (2,q_c)",
+  "Certified failure on (2,2.764]",
+  "2 is an isolated universal point within (1,2.764]",
+  "q<1 fan limit and pointwise certificates",
+  "Smaller explicit witnesses at q=3/2 and q=9/10"
+ ],
+ "unclosed_obligations": [
+  "Classify q>2.764 including integer q>=3",
+  "Complete the low-q region: all-p statements below 1 and anything below ~0.57",
+  "Determine sup of the flow-witness failure set below 3"
+ ],
+ "specific_obstacles": [
+  "Eulerian flow polynomials are positive at all integers >=2",
+  "No Eulerian witness found above 2.77; circulant upper roots still rising at n=32 (computation cost grows quickly)",
+  "The q<1 limit G_w depends on p and its sign was only certified pointwise"
+ ],
+ "external_priority_review": "pending",
+ "external_adversarial_review": "pending (one independent agent audit completed)",
+ "publication_write_performed": false
+}

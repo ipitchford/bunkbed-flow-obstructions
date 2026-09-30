@@ -1,0 +1,213 @@
+[
+ {
+  "kind": "sec",
+  "title": "The question and the results"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:signed"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:flow"
+ },
+ {
+  "kind": "theorem",
+  "name": "Eulerian-flow transfer",
+  "label": "thm:transfer"
+ },
+ {
+  "kind": "corollary",
+  "name": "",
+  "label": "cor:main"
+ },
+ {
+  "kind": "sec",
+  "title": "A word identity"
+ },
+ {
+  "kind": "subsec",
+  "title": "The auxiliary hypergraph"
+ },
+ {
+  "kind": "theorem",
+  "name": "Exact word identity",
+  "label": "thm:word"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:word"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:S"
+ },
+ {
+  "kind": "sec",
+  "title": "Uniform fans and real-$q$ continuation"
+ },
+ {
+  "kind": "subsec",
+  "title": "The ordinary graph"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:corecounts"
+ },
+ {
+  "kind": "subsec",
+  "title": "The fan matrix and its two dominant eigenvalues"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:fan"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:eigen"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:ordering"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:wedge-limit"
+ },
+ {
+  "kind": "subsec",
+  "title": "A finite representation for every real $q$"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:finite"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:rankone"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:contraction"
+ },
+ {
+  "kind": "proposition",
+  "name": "Uniform fan limit",
+  "label": "prop:fanlimit"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:limit"
+ },
+ {
+  "kind": "sec",
+  "title": "From conditioned posts to the full bunkbed"
+ },
+ {
+  "kind": "lemma",
+  "name": "Exact post amplification",
+  "label": "lem:amplify"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:leading"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:yk"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:Bamp"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:ks"
+ },
+ {
+  "kind": "sec",
+  "title": "Consequences for the parameter question"
+ },
+ {
+  "kind": "subsec",
+  "title": "Every $1<q<2$ fails"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:thick"
+ },
+ {
+  "kind": "subsec",
+  "title": "The known positive point and the exact minimum"
+ },
+ {
+  "kind": "proposition",
+  "name": "H\\\"aggstr\\\"om's Ising point",
+  "label": "prop:ising"
+ },
+ {
+  "kind": "subsec",
+  "title": "An obstruction above $2$"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:wordstar"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:poly"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:negativevalue"
+ },
+ {
+  "kind": "sec",
+  "title": "Finite witnesses and reproducibility"
+ },
+ {
+  "kind": "subsec",
+  "title": "Two fully specified cases at $p=1/2$"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:finitegap"
+ },
+ {
+  "kind": "subsec",
+  "title": "Independent checks and their limits"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:partitionflow"
+ },
+ {
+  "kind": "sec",
+  "title": "Scope, priority, and unresolved parts"
+ },
+ {
+  "kind": "sec",
+  "title": "A rational error bound for the fan limit"
+ },
+ {
+  "kind": "lemma",
+  "name": "",
+  "label": "lem:error"
+ },
+ {
+  "kind": "eq",
+  "label": "eq:error"
+ },
+ {
+  "kind": "sec",
+  "title": "The closed-interval sign certificate"
+ },
+ {
+  "kind": "sec",
+  "title": "A source-level issue avoided by the proof"
+ },
+ {
+  "kind": "sec",
+  "title": "Reproduction and assurance record"
+ }
+]

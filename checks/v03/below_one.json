@@ -1,0 +1,8 @@
+{
+  "check": "all-p below-one theorem: symbolic five-partition identity, 9 Bernstein positivity polynomials, global quintic root isolation, 7 independent field comparisons",
+  "status": "PASS",
+  "root_bracket": [
+    "787422865474633/1000000000000000",
+    "393711432737317/500000000000000"
+  ]
+}

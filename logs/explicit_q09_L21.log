@@ -1,0 +1,28 @@
+{
+ "q": "9/10",
+ "p": "1/2",
+ "word": [
+  0,
+  1,
+  2,
+  0,
+  1,
+  2
+ ],
+ "L": 21,
+ "core_vertices": 130,
+ "core_edges": 258,
+ "coefficient_signs": [
+  1,
+  1,
+  1,
+  -1
+ ],
+ "a_t_equals_NT": true,
+ "min_pendants_per_post": 1099,
+ "base_vertices": 3427,
+ "base_edges": 3555,
+ "full_vertices": 6854,
+ "full_edges": 10537,
+ "N_y_seconds": 186.6
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-30",
+  "brief_file": "Pasted text(20260930-030650).txt",
+  "brief_sha256": "dedb61225c53c00298e78547bbdc9d47bdfef56b5bf3ad412d00a5ea78a2dd67",
+  "primary_sources": [
+    {
+      "title": "The bunkbed problem and the random cluster model",
+      "url": "https://arxiv.org/abs/2509.18788",
+      "version_inspected": "v1, including PDF pages 2 and 29-31"
+    },
+    {
+      "title": "The bunkbed conjecture is false",
+      "url": "https://arxiv.org/abs/2410.02545",
+      "additional_author_version": "https://www.math.ucla.edu/~gladkovna/Papers/BunkBed6.pdf"
+    },
+    {
+      "title": "On zero-free intervals of flow polynomials",
+      "url": "https://arxiv.org/abs/1403.1916"
+    },
+    {
+      "title": "Correlation inequalities on some partially ordered sets",
+      "url": "https://doi.org/10.1007/BF01651330"
+    }
+  ],
+  "literature_search_limitation": "Some direct PDF fetches failed; bibliographic details and claimed prior results were cross-checked through primary arXiv text, authors versions and publisher or institutional records. The full Haggstrom PDF was not successfully fetched; the result was verified through ALR Theorem 1.5 and an included Ising/FKG proof.",
+  "discovery_not_proof": [
+    "Floating-point fan exploration",
+    "Finite sampling of regular Eulerian graphs",
+    "Nonexhaustive auxiliary graph contraction search"
+  ],
+  "unclosed_searches": [
+    "Uniform long fans below q=1 did not give a proof for all low q",
+    "The sampled simple 4-regular graphs on 8 and 10 vertices did not produce above-2 witnesses; this is not an exhaustive nonexistence result"
+  ],
+  "external_review": false,
+  "formal_verification": false,
+  "website_modified": false
+}

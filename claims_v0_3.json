@@ -1,0 +1,74 @@
+{
+  "schema": "evidence-press-claims-v03",
+  "date": "2026-09-30",
+  "status": "candidate_with_proofs_and_executed_exact_checks",
+  "claims": [
+    {
+      "id": "T1",
+      "origin": "retained_v0_1",
+      "statement": "Eulerian-flow transfer for all real q>1, at every prescribed 0<p<1.",
+      "manuscript": "Theorem 1.1; Sections 2\u20134",
+      "evidence": "Written finite-q algebra, spectral limit, exact amplification; baseline finite checks."
+    },
+    {
+      "id": "T2",
+      "origin": "retained_v0_2",
+      "statement": "Every p fails for 1<q<2 and 2<q<=691/250.",
+      "manuscript": "Sections 5.1, 5.3\u20135.5",
+      "evidence": "Analytic thickened triangles and K4b; all 16 flow certificates fully reconstructed."
+    },
+    {
+      "id": "T3",
+      "origin": "new_v0_3",
+      "statement": "Every p fails for alpha<=q<1, including alpha.",
+      "manuscript": "Theorem 6.3",
+      "evidence": "Five-partition symbolic identity; nine Bernstein positivity certificates; exact unique-root isolation; seven quadratic-field cross-checks."
+    },
+    {
+      "id": "T4",
+      "origin": "new_v0_3",
+      "statement": "For each x>0, the q=1 normalised ABCABC fan numerator tends to -1.",
+      "manuscript": "Theorem 7.1",
+      "evidence": "Written derivative/Jordan proof; exact symbolic identities; nine jet/frontier checks; six negative finite cores."
+    },
+    {
+      "id": "T5",
+      "origin": "new_combination",
+      "statement": "For each 0<p<1, U_p intersect [alpha,691/250] equals {2}.",
+      "manuscript": "Corollary 1.2",
+      "evidence": "T2\u2013T4 plus credited q=2 theorem and included proof."
+    },
+    {
+      "id": "T6",
+      "origin": "retained_v0_2",
+      "statement": "Full graphs at p=1/2 have 6854 vertices for q=9/10 and 21854 for q=3/2; pendant counts minimal for those fixed cores.",
+      "manuscript": "Section 8.1",
+      "evidence": "Both full-core cubics rebuilt; exact pendant signs; current edge lists and full generators checked."
+    },
+    {
+      "id": "T7",
+      "origin": "retained_v0_1",
+      "statement": "A 36423050-vertex full graph at q=21/10,p=1/2 has negative numerator.",
+      "manuscript": "Section 8.1; Appendix A",
+      "evidence": "Rational sufficient bound plus exact recipe. Not direct full partition-function enumeration."
+    },
+    {
+      "id": "T8",
+      "origin": "new_v0_3",
+      "statement": "For edge-disjoint graphs with b>=1 shared vertices, marginal density lies in [R^(-(b-1)),R^(b-1)].",
+      "manuscript": "Lemma D.1",
+      "evidence": "Written component-rank proof; 44168 finite partition-pair identity checks."
+    },
+    {
+      "id": "S1",
+      "origin": "repair_v0_3",
+      "statement": "Proof-critical validations remain active under Python optimisation; tested corruptions are rejected.",
+      "manuscript": "Appendix E; RESPONSE_TO_REVIEW.md",
+      "evidence": "Explicit checks replace 75 assertions; full baseline/developed replay under -O; ten negative tests."
+    }
+  ],
+  "quantifiers": "For every q in the exclusion set and every interior p, there exists G=G(q,p).",
+  "external_human_review": false,
+  "formal_proof_assistant_verification": false,
+  "global_classification_completed": false
+}

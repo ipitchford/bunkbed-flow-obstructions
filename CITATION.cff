@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the exact candidate version; publication is not external validation."
+title: "Flow-polynomial obstructions to the random-cluster bunkbed inequality: An exact homogeneous parameter window around the Ising point"
+authors:
+  - name: Anonymous
+version: 0.3.1-candidate
+date-released: 2026-09-30
+doi: 10.5281/zenodo.23063182
+url: https://github.com/ipitchford/bunkbed-flow-obstructions
+license: CC0-1.0

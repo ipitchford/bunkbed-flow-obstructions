@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-09-30T14:12:00.866089+00:00",
+  "full_reconstruction": true,
+  "python": "3.14.7",
+  "sympy": "1.14.0",
+  "python_optimisation": 1,
+  "steps": [
+    {
+      "name": "baseline",
+      "command": [
+        "python3.14",
+        "-O",
+        "v0_1/code/run_all.py"
+      ],
+      "returncode": 0,
+      "seconds": 3.114,
+      "log": "runs/full/opt1/baseline.log",
+      "log_sha256": "b72abd0f78f65e91e6dd83021ffd9767649e866bf0bd5a19c58c4093d00b3909"
+    },
+    {
+      "name": "developed",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/certify_v02.py",
+        "--full"
+      ],
+      "returncode": 0,
+      "seconds": 468.8,
+      "log": "runs/full/opt1/developed.log",
+      "log_sha256": "f1665618cb3582ee6511dc88e511b1a896933e121d7628a84b894baedda335bd"
+    },
+    {
+      "name": "below_one",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/verify_below_universal.py"
+      ],
+      "returncode": 0,
+      "seconds": 5.599,
+      "log": "runs/full/opt1/below_one.log",
+      "log_sha256": "5fb8ecc70c7a39e5862e37319db8562d0ffb4793f860e1e5cb08a31e4f32bc57"
+    },
+    {
+      "name": "percolation",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/verify_percolation_limit.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.831,
+      "log": "runs/full/opt1/percolation.log",
+      "log_sha256": "10afcbf1364c89576db7e1b5589eec8a9cb69d15ed0be5a35a01b83ce850466d"
+    },
+    {
+      "name": "structure",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/validate_release_inputs.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.477,
+      "log": "runs/full/opt1/structure.log",
+      "log_sha256": "f12c8eb0f20d77d2ec687e977062420a63768ec69df9cd588de69747191023d8"
+    },
+    {
+      "name": "graphs",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/verify_graph_files.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.33,
+      "log": "runs/full/opt1/graphs.log",
+      "log_sha256": "62bd1c2aa065c17738256e016928d84e5fb130f248d67cd4e07d78bf1f101e92"
+    },
+    {
+      "name": "interface",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/verify_interface.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.264,
+      "log": "runs/full/opt1/interface.log",
+      "log_sha256": "f4bdca228c82397710f83429da8492b4f85424211e1aa08d05f2a967a54b3df5"
+    },
+    {
+      "name": "current_paper",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/crosscheck_v03.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.46,
+      "log": "runs/full/opt1/current_paper.log",
+      "log_sha256": "028a1c8b9cc07f0dfb988a5d1772c3bb1d9976079a91c305995d6d1dbbbcd18a"
+    },
+    {
+      "name": "historical_paper",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/crosscheck_manuscript.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.033,
+      "log": "runs/full/opt1/historical_paper.log",
+      "log_sha256": "41a427b71ff38117ae0ec0cd29218e069680d776171544823f3d3c1845dd401d"
+    },
+    {
+      "name": "negative_tests",
+      "command": [
+        "python3.14",
+        "-O",
+        "code/test_negative_cases.py"
+      ],
+      "returncode": 0,
+      "seconds": 10.999,
+      "log": "runs/full/opt1/negative_tests.log",
+      "log_sha256": "b6dae6874edeee306ab9312fa858e27b892e5106e2adcbaa6d67d8b745113861"
+    }
+  ],
+  "formal_proof_assistant_verification": false,
+  "external_peer_review": false,
+  "full_parameter_classification_completed": false,
+  "manifest": {
+    "status": "PASS",
+    "covered_files": 110,
+    "sha256": "9b37fa0c8f724cc8ce4e19791572e6a8284430073bbed2fc32ca0072fcca06a4"
+  },
+  "elapsed_seconds": 492.215
+}

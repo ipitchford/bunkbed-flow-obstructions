@@ -1,0 +1,54 @@
+{
+ "date": "2026-09-30",
+ "built_from": "evidence_press_bunkbed_v0_1.zip (sha256 of inner SHA256SUMS-verified files as listed in v0_1/SHA256SUMS)",
+ "primary_sources_inspected": [
+  {
+   "title": "The bunkbed problem and the random cluster model",
+   "authors": "Ayyer, Linusson, Ravichandran",
+   "url": "https://arxiv.org/abs/2509.18788",
+   "version": "v1, 23 Sep 2025, full text via arXiv PDF"
+  },
+  {
+   "title": "arXiv API listing for 'bunkbed' (20 entries)",
+   "url": "http://export.arxiv.org/api/query?search_query=all:bunkbed"
+  },
+  {
+   "title": "The bunkbed conjecture is false",
+   "authors": "Gladkov, Pak, Zimin",
+   "url": "https://arxiv.org/abs/2410.02545"
+  },
+  {
+   "title": "The bunkbed conjecture is not robust to generalisation",
+   "authors": "Hollom",
+   "url": "https://arxiv.org/abs/2406.01790"
+  },
+  {
+   "title": "Vertex gluing preserves the bunkbed conjecture",
+   "authors": "Meunier, Pournajafi",
+   "url": "https://arxiv.org/abs/2410.08957"
+  },
+  {
+   "title": "The acyclic directed bunkbed conjecture is false",
+   "authors": "Przybylowski",
+   "url": "https://arxiv.org/abs/2506.22284"
+  }
+ ],
+ "not_retrievable": [
+  "Haggstrom (2003) FPSAC PDF (TLS certificate mismatch on igm.univ-mlv.fr); cited via ALR Theorem 1.5"
+ ],
+ "tools": {
+  "python": "3.11.15",
+  "sympy": "1.14.0",
+  "numpy": "2.4.4",
+  "pandoc": "3.1.3",
+  "latex": "TeX Live 2023 (pdflatex, mathpazo)"
+ },
+ "discovery_not_proof": [
+  "Simulated annealing over words (float)",
+  "Family scans with float grid before exact certification",
+  "Floating-point q<1 limit map (qlt1_limit.py); the exact grid in qlt1_exact_map.py is the certified one"
+ ],
+ "external_review": false,
+ "formal_verification": false,
+ "website_modified": false
+}

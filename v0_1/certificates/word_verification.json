@@ -1,0 +1,180 @@
+{
+  "status": "PASS",
+  "word_checks": [
+    {
+      "word": "A",
+      "configurations": 4,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        -1,
+        1
+      ],
+      "numerator_coefficients": {
+        "3": 1
+      }
+    },
+    {
+      "word": "AA",
+      "configurations": 16,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        1,
+        -2,
+        1
+      ],
+      "numerator_coefficients": {
+        "3": -1,
+        "4": 1
+      }
+    },
+    {
+      "word": "AB",
+      "configurations": 16,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        -1,
+        1
+      ],
+      "numerator_coefficients": {
+        "4": 1
+      }
+    },
+    {
+      "word": "ABA",
+      "configurations": 64,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        1,
+        -2,
+        1
+      ],
+      "numerator_coefficients": {
+        "4": -1,
+        "5": 1
+      }
+    },
+    {
+      "word": "ABC",
+      "configurations": 64,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        -1,
+        1
+      ],
+      "numerator_coefficients": {
+        "5": 1
+      }
+    },
+    {
+      "word": "ABAC",
+      "configurations": 256,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        1,
+        -2,
+        1
+      ],
+      "numerator_coefficients": {
+        "5": -1,
+        "6": 1
+      }
+    },
+    {
+      "word": "ABCACB",
+      "configurations": 4096,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        7,
+        -17,
+        15,
+        -6,
+        1
+      ],
+      "numerator_coefficients": {
+        "7": -5,
+        "6": 10,
+        "5": -7,
+        "8": 1
+      }
+    },
+    {
+      "word": "ABCABC",
+      "configurations": 4096,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        7,
+        -17,
+        15,
+        -6,
+        1
+      ],
+      "numerator_coefficients": {
+        "7": -5,
+        "6": 10,
+        "5": -7,
+        "8": 1
+      }
+    },
+    {
+      "word": "AABCCB",
+      "configurations": 4096,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        1,
+        -4,
+        6,
+        -4,
+        1
+      ],
+      "numerator_coefficients": {
+        "7": -3,
+        "6": 3,
+        "5": -1,
+        "8": 1
+      }
+    },
+    {
+      "word": "ABACBDCD",
+      "configurations": 65536,
+      "status": "PASS",
+      "flow_coefficients_ascending": [
+        -17,
+        47,
+        -51,
+        28,
+        -8,
+        1
+      ],
+      "numerator_coefficients": {
+        "9": -7,
+        "8": 21,
+        "7": -30,
+        "6": 17,
+        "10": 1
+      }
+    }
+  ],
+  "triangle_choices": [
+    {
+      "q": "6/5",
+      "even_multiplicity": 2,
+      "negative": true
+    },
+    {
+      "q": "3/2",
+      "even_multiplicity": 4,
+      "negative": true
+    },
+    {
+      "q": "9/5",
+      "even_multiplicity": 14,
+      "negative": true
+    },
+    {
+      "q": "199/100",
+      "even_multiplicity": 598,
+      "negative": true
+    }
+  ],
+  "elapsed_seconds": 0.11657071113586426
+}

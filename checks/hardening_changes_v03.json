@@ -1,0 +1,78 @@
+[
+  {
+    "file": "code/families4.py",
+    "assertions_replaced": 1
+  },
+  {
+    "file": "code/audit_amplification.py",
+    "assertions_replaced": 5
+  },
+  {
+    "file": "code/explicit_q09.py",
+    "assertions_replaced": 1
+  },
+  {
+    "file": "code/fanbound.py",
+    "assertions_replaced": 5
+  },
+  {
+    "file": "code/audit_word_and_core.py",
+    "assertions_replaced": 2
+  },
+  {
+    "file": "code/qlt1_exact.py",
+    "assertions_replaced": 3
+  },
+  {
+    "file": "code/bb_tools.py",
+    "assertions_replaced": 3
+  },
+  {
+    "file": "code/audit_flow_witness.py",
+    "assertions_replaced": 5
+  },
+  {
+    "file": "code/certify_v02.py",
+    "assertions_replaced": 5
+  },
+  {
+    "file": "code/families3.py",
+    "assertions_replaced": 1
+  },
+  {
+    "file": "code/witness_table.py",
+    "assertions_replaced": 4
+  },
+  {
+    "file": "code/explicit_q32.py",
+    "assertions_replaced": 2
+  },
+  {
+    "file": "code/c32.py",
+    "assertions_replaced": 1
+  },
+  {
+    "file": "code/families2.py",
+    "assertions_replaced": 1
+  },
+  {
+    "file": "v0_1/code/verify_core.py",
+    "assertions_replaced": 6
+  },
+  {
+    "file": "v0_1/code/run_all.py",
+    "assertions_replaced": 7
+  },
+  {
+    "file": "v0_1/code/verify_asymptotic.py",
+    "assertions_replaced": 7
+  },
+  {
+    "file": "v0_1/code/verify_words.py",
+    "assertions_replaced": 4
+  },
+  {
+    "file": "v0_1/code/verify_flow.py",
+    "assertions_replaced": 12
+  }
+]

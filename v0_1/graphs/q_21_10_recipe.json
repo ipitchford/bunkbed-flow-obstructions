@@ -1,0 +1,12 @@
+{
+  "q": "21/10",
+  "p": "1/2",
+  "base_vertices": 18211525,
+  "base_edges": 18235536,
+  "base_u": 12,
+  "base_v": 24012,
+  "full_source": 24,
+  "full_same_target": 48024,
+  "full_cross_target": 48025,
+  "vertex_convention": "full copy (a,layer) has label 2*a+layer"
+}

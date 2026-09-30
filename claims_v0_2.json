@@ -1,0 +1,77 @@
+{
+ "release": "Evidence Press bunkbed v0.2.0",
+ "date": "2026-09-30",
+ "supersedes": "v0.1.0 (included unchanged in v0_1/)",
+ "requested_goal": "Full classification of (p,q) for the random-cluster bunkbed inequality on all finite graphs (ALR Problem 1.4)",
+ "full_goal_completed": false,
+ "claims": [
+  {
+   "id": "C1..C7",
+   "status": "v0.1 claims re-verified; see AUDIT_LEDGER.md"
+  },
+  {
+   "id": "N1",
+   "claim": "Gamma_* quotient has exactly two real roots 2.0231663..., 2.2730755...; failure certified on [2.0232, 2.2730]",
+   "status": "proved_exact"
+  },
+  {
+   "id": "N2",
+   "claim": "Closed form q^{3+b}F(K_{4,b}) = (z^4+z)^b+4z(-1)^b(z^3+1)^b+3z(2z^2+z-1)^b+6z(z-1)(z^2-z-2)^b+z(z-1)(z-2)(-3q)^b",
+   "status": "proved"
+  },
+  {
+   "id": "N3",
+   "claim": "For every p in (0,1) and every q in (2,q_c), q_c the real root of q^3-4q^2+6q-6 (2.574743...), the inequality fails on a finite simple full bunkbed",
+   "status": "proved"
+  },
+  {
+   "id": "N4",
+   "claim": "For every p in (0,1) and every q in (2, 691/250=2.764], the inequality fails (K_{4,b} family plus certified circulants up to C_32(1,5))",
+   "status": "proved_exact_certificates"
+  },
+  {
+   "id": "N5",
+   "claim": "Within (1, 2.764] the set of universal q is exactly {2}",
+   "status": "proved_using_credited_prior_result (Haggstrom q=2)"
+  },
+  {
+   "id": "N6",
+   "claim": "Explicit q=3/2, p=1/2 counterexample: (ABC)^4 fan core with L=19 and k=3565 pendants per post; full bunkbed 21854 vertices, 33253 edges; k is the exact minimum for this core",
+   "status": "proved_exact"
+  },
+  {
+   "id": "N7",
+   "claim": "For 0<q<1 the conditioned fan numerator has the limit G_w(q,x) of Proposition 7.1; G_w<0 implies a counterexample at (q,p=x/(1+x))",
+   "status": "proved"
+  },
+  {
+   "id": "N8",
+   "claim": "Exact signs of G for thickened triangles on the (q,x) grid; thresholds q_0(x) in Table 2 (e.g. doubled triangle negative at every tested x for q>=4/5)",
+   "status": "proved_at_grid_points"
+  },
+  {
+   "id": "N9",
+   "claim": "Seven exact finite certificates below q=1 (e.g. (q,p)=(9/10,1/2),(4/5,1/2),(9/10,1/4),(9/10,3/4)) and an explicit (9/10,1/2) full bunkbed with 6854 vertices, 10537 edges",
+   "status": "proved_exact"
+  },
+  {
+   "id": "N10",
+   "claim": "No Eulerian graph with negative flow value above 2.77, and none above 3, was found in the searched families/words",
+   "status": "negative_search_evidence_only"
+  }
+ ],
+ "not_claimed": [
+  "Complete classification of all (p,q)",
+  "Anything for integer q>=3",
+  "Failure for q>2.764",
+  "Failure for all p at any fixed q<1",
+  "Failure below q~0.57",
+  "Minimality of witnesses",
+  "External peer review",
+  "Formal proof-assistant verification",
+  "Exhaustive novelty certification",
+  "Live publication on evidencepress.org"
+ ],
+ "floating_point_in_proof_dependencies": false,
+ "independence_description": "v0.1 produced in one assistant session; v0.2 audit, code and new results produced in a second, independent assistant session; no external human referee"
+}

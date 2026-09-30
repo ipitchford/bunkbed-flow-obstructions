@@ -1,0 +1,5 @@
+{
+ "tiny_core_checks": "N(y) DP == brute force at 4 values of y; a_t == N^T (3 instances)",
+ "pendant_reduction_bruteforce": true,
+ "elapsed": 22.992124795913696
+}

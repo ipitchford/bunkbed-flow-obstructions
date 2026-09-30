@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0",
+  "recordBoundary": "Retrospective publication intake on 2026-09-30; original supplied research chronology is not reconstructed.",
+  "contributionMap": [
+    {
+      "claim": "Exact local window for each prescribed interior p",
+      "unit": "statement",
+      "paperLocation": "paper/manuscript_v0_3.tex Sections 1,5-7",
+      "searches": [
+        {
+          "date": "2026-09-30",
+          "query": "Bunkbed random cluster parameter interval and homogeneous full graph quantifiers",
+          "corpus": "Supplied NOVELTY_REPORT and primary ALR v1 Theorem 1.6/Appendix A intake refresh"
+        }
+      ],
+      "closestPriorWork": "ALR 0.56<q<1.43; GPZ ordinary percolation disproof; Haggstrom q=2",
+      "verdict": "partially-known-cited",
+      "qualification": "Candidate exact local classification; alpha is not lower record; bounded comparison only",
+      "evidence": "SOURCES.md"
+    },
+    {
+      "claim": "Flow-polynomial to full homogeneous graph transfer",
+      "unit": "method",
+      "paperLocation": "paper/manuscript_v0_3.tex Sections 2-4",
+      "searches": [
+        {
+          "date": "2026-09-30",
+          "query": "Eulerian flow polynomial bunkbed and post amplification",
+          "corpus": "Supplied novelty audit; ALR Appendix A and GPZ source comparison"
+        }
+      ],
+      "closestPriorWork": "Weighted fixed-post gadgets, full/unweighted extensions and post amplification",
+      "verdict": "partially-known-cited",
+      "qualification": "Known construction ingredients credited; universal candidate transfer separately stated",
+      "evidence": "SOURCES.md"
+    },
+    {
+      "claim": "Eulerian witness graphs and flow polynomial objects",
+      "unit": "object",
+      "paperLocation": "paper/manuscript_v0_3.tex Section 5",
+      "searches": [
+        {
+          "date": "2026-09-30",
+          "query": "Flow polynomial doubled triangle and zero free intervals",
+          "corpus": "Supplied audit and Dong citation comparison"
+        }
+      ],
+      "closestPriorWork": "Dong flow-polynomial context; ALR doubled triangle",
+      "verdict": "known-cited",
+      "qualification": "No general claim that witness polynomials or graph objects are new",
+      "evidence": "NOVELTY_REPORT.md"
+    }
+  ],
+  "sourcesReadInFull": [
+    {
+      "citation": "arXiv:2509.18788v1",
+      "usedFor": "Quantifiers, prior interval and attachment-lemma distinction",
+      "readWhat": "Load-bearing Problem 1.4, Theorem 1.6 and Appendix A with assumptions, not only abstract",
+      "date": "2026-09-30",
+      "evidenceLocator": "SOURCES.md first row and review response"
+    }
+  ],
+  "limitationTriage": [
+    {
+      "limitation": "Global parameter classification and integer q>=3",
+      "closingQuestion": "Does the negative Eulerian-flow mechanism settle these integers?",
+      "triedOrSearched": "Checked manuscript Section 9 mechanism obstruction and supplied audit.",
+      "estimatedCost": "Separate research",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "Eulerian integer flow values are positive; present mechanism does not settle them.",
+      "whyNotClosedNow": "Outside authorised publication repairs."
+    },
+    {
+      "limitation": "Minimal graph order",
+      "closingQuestion": "Does fixed-core pendant minimality establish global minimality?",
+      "triedOrSearched": "Scoped the construction and retained explicit boundary.",
+      "estimatedCost": "New optimisation research",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "No global lower bound.",
+      "whyNotClosedNow": "Not needed for stated theorem."
+    },
+    {
+      "limitation": "External or formal verification",
+      "closingQuestion": "Can producer-side replay establish independence?",
+      "triedOrSearched": "Separated internal reconstruction, model-assisted checks and external evidence.",
+      "estimatedCost": "Separate formalisation or external action",
+      "cheap": false,
+      "decision": "OPEN",
+      "reasonOpen": "No such evidence established.",
+      "whyNotClosedNow": "Publish reproducible package with precise limitations."
+    }
+  ],
+  "extensionScout": {
+    "by": "Codex publication intake",
+    "date": "2026-09-30",
+    "proposals": [
+      "Independent transfer audit",
+      "Smaller witnesses",
+      "Wider intervals"
+    ],
+    "actions": [
+      "Retain as future work; no added theorem claims"
+    ]
+  }
+}
